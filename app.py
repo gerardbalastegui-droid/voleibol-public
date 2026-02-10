@@ -15,21 +15,6 @@ def get_engine():
         return create_engine(url)
     return None
 
-def get_temporadas():
-    """Obtiene lista de temporadas"""
-    engine = get_engine()
-    if not engine:
-        return []
-    
-    with engine.connect() as conn:
-        df = pd.read_sql(text("""
-            SELECT id, nombre
-            FROM temporadas
-            WHERE activo = TRUE
-            ORDER BY nombre DESC
-        """), conn)
-        return df.to_dict('records')
-
 def get_equipos():
     """Obtiene lista de equipos"""
     engine = get_engine()
@@ -38,58 +23,55 @@ def get_equipos():
     
     with engine.connect() as conn:
         df = pd.read_sql(text("""
-            SELECT e.id, e.nombre, c.nombre as categoria,
-                   e.nombre || ' ' || c.nombre as nombre_completo
-            FROM equipos e
-            JOIN categorias c ON e.categoria_id = c.id
-            WHERE e.activo = TRUE
-            ORDER BY c.nombre, e.nombre
+            SELECT id, nombre, equipo_letra,
+                   CASE 
+                       WHEN equipo_letra IS NOT NULL AND equipo_letra != ''
+                       THEN nombre || ' ' || equipo_letra
+                       ELSE nombre
+                   END as nombre_completo
+            FROM equipos
+            ORDER BY nombre, equipo_letra
         """), conn)
         return df.to_dict('records')
 
-def get_equipo_stats(equipo_id, temporada_id=None):
+def get_equipo_stats(equipo_id):
     """Obtiene estadísticas de un equipo"""
     engine = get_engine()
     if not engine:
         return None
     
     with engine.connect() as conn:
-        params = {"equipo_id": equipo_id}
-        temp_filter = ""
-        if temporada_id:
-            temp_filter = "AND temporada_id = :temporada_id"
-            params["temporada_id"] = temporada_id
-        
-        stats = pd.read_sql(text(f"""
+        stats = pd.read_sql(text("""
             SELECT 
                 COUNT(*) as partidos,
-                COUNT(*) FILTER (WHERE sets_local > sets_visitante) as victorias,
-                COUNT(*) FILTER (WHERE sets_local < sets_visitante) as derrotas,
-                COALESCE(SUM(sets_local), 0) as sets_favor,
-                COALESCE(SUM(sets_visitante), 0) as sets_contra
+                COUNT(*) FILTER (WHERE resultado LIKE '3-%' OR resultado LIKE '3 -%') as victorias,
+                COUNT(*) FILTER (WHERE resultado NOT LIKE '3-%' AND resultado NOT LIKE '3 -%' AND resultado IS NOT NULL) as derrotas
             FROM partidos_new
             WHERE equipo_id = :equipo_id
-            {temp_filter}
-        """), conn, params=params)
+        """), conn, params={"equipo_id": equipo_id})
         
         if stats.empty:
             return None
         
         result = stats.iloc[0].to_dict()
         
-        # Calcular racha actual
-        ultimos = pd.read_sql(text(f"""
-            SELECT 
-                CASE WHEN sets_local > sets_visitante THEN 'W' ELSE 'L' END as resultado
+        # Calcular racha actual (últimos 5 partidos)
+        ultimos = pd.read_sql(text("""
+            SELECT resultado
             FROM partidos_new
-            WHERE equipo_id = :equipo_id
-            {temp_filter}
+            WHERE equipo_id = :equipo_id AND resultado IS NOT NULL
             ORDER BY fecha DESC
             LIMIT 5
-        """), conn, params=params)
+        """), conn, params={"equipo_id": equipo_id})
         
         if not ultimos.empty:
-            result['racha'] = ''.join(ultimos['resultado'].tolist())
+            racha = []
+            for r in ultimos['resultado']:
+                if r and (r.startswith('3-') or r.startswith('3 -')):
+                    racha.append('W')
+                else:
+                    racha.append('L')
+            result['racha'] = ''.join(racha)
         else:
             result['racha'] = ''
         
@@ -103,134 +85,93 @@ def get_jugadores_equipo(equipo_id):
     
     with engine.connect() as conn:
         df = pd.read_sql(text("""
-            SELECT 
-                CASE 
-                    WHEN nombre IS NOT NULL AND nombre != '' 
-                    THEN nombre || ' ' || apellido 
-                    ELSE apellido 
-                END AS nombre_completo,
-                dorsal,
-                posicion
+            SELECT apellido, posicion, dorsal
             FROM jugadores
-            WHERE equipo_id = :equipo_id AND activo = TRUE
+            WHERE equipo_id = :equipo_id AND activo = true
             ORDER BY dorsal NULLS LAST, apellido
         """), conn, params={"equipo_id": equipo_id})
         return df.to_dict('records')
 
-def get_top_anotadores(equipo_id, temporada_id=None, limit=5):
+def get_top_anotadores(equipo_id, limit=5):
     """Obtiene top anotadores del equipo"""
     engine = get_engine()
     if not engine:
         return []
     
     with engine.connect() as conn:
-        params = {"equipo_id": equipo_id, "limit": limit}
-        temp_filter = ""
-        if temporada_id:
-            temp_filter = "AND p.temporada_id = :temporada_id"
-            params["temporada_id"] = temporada_id
-        
-        df = pd.read_sql(text(f"""
+        df = pd.read_sql(text("""
             SELECT 
-                CASE 
-                    WHEN j.nombre IS NOT NULL AND j.nombre != '' 
-                    THEN j.nombre || ' ' || j.apellido 
-                    ELSE j.apellido 
-                END AS jugador,
+                j.apellido as jugador,
                 COUNT(*) FILTER (WHERE a.marca = '#') as puntos
             FROM acciones_new a
             JOIN jugadores j ON a.jugador_id = j.id
             JOIN partidos_new p ON a.partido_id = p.id
             WHERE p.equipo_id = :equipo_id
             AND a.tipo_accion IN ('atacar', 'bloqueo', 'saque')
-            {temp_filter}
-            GROUP BY j.id, j.nombre, j.apellido
+            GROUP BY j.id, j.apellido
             HAVING COUNT(*) FILTER (WHERE a.marca = '#') > 0
             ORDER BY puntos DESC
             LIMIT :limit
-        """), conn, params=params)
+        """), conn, params={"equipo_id": equipo_id, "limit": limit})
         return df.to_dict('records')
 
-def get_partidos_equipo(equipo_id, temporada_id=None, limit=None):
+def get_partidos_equipo(equipo_id, limit=None):
     """Obtiene partidos de un equipo"""
     engine = get_engine()
     if not engine:
         return []
     
     with engine.connect() as conn:
-        params = {"equipo_id": equipo_id}
-        temp_filter = ""
-        limit_clause = ""
-        
-        if temporada_id:
-            temp_filter = "AND temporada_id = :temporada_id"
-            params["temporada_id"] = temporada_id
-        
-        if limit:
-            limit_clause = f"LIMIT {limit}"
+        limit_clause = f"LIMIT {limit}" if limit else ""
         
         df = pd.read_sql(text(f"""
             SELECT 
                 id,
                 rival,
-                sets_local,
-                sets_visitante,
+                local,
+                resultado,
                 TO_CHAR(fecha, 'DD/MM/YYYY') as fecha,
-                fecha as fecha_raw,
                 CASE 
-                    WHEN sets_local > sets_visitante THEN 'victoria'
-                    WHEN sets_local < sets_visitante THEN 'derrota'
-                    ELSE 'empate'
-                END as resultado
+                    WHEN resultado LIKE '3-%' OR resultado LIKE '3 -%' THEN 'victoria'
+                    ELSE 'derrota'
+                END as resultado_tipo
             FROM partidos_new
             WHERE equipo_id = :equipo_id
-            {temp_filter}
             ORDER BY fecha DESC
             {limit_clause}
-        """), conn, params=params)
+        """), conn, params={"equipo_id": equipo_id})
         return df.to_dict('records')
 
-def get_todos_resultados(temporada_id=None):
+def get_todos_resultados():
     """Obtiene todos los resultados de todos los equipos"""
     engine = get_engine()
     if not engine:
         return []
     
     with engine.connect() as conn:
-        params = {}
-        temp_filter = ""
-        
-        if temporada_id:
-            temp_filter = "WHERE p.temporada_id = :temporada_id"
-            params["temporada_id"] = temporada_id
-        
-        df = pd.read_sql(text(f"""
+        df = pd.read_sql(text("""
             SELECT 
                 p.id,
-                e.nombre || ' ' || c.nombre as equipo,
-                p.rival,
-                p.sets_local,
-                p.sets_visitante,
-                TO_CHAR(p.fecha, 'DD/MM/YYYY') as fecha,
-                p.fecha as fecha_raw,
                 CASE 
-                    WHEN p.sets_local > p.sets_visitante THEN 'victoria'
-                    WHEN p.sets_local < p.sets_visitante THEN 'derrota'
-                    ELSE 'empate'
-                END as resultado
+                    WHEN e.equipo_letra IS NOT NULL AND e.equipo_letra != ''
+                    THEN e.nombre || ' ' || e.equipo_letra
+                    ELSE e.nombre
+                END as equipo,
+                p.rival,
+                p.resultado,
+                p.local,
+                TO_CHAR(p.fecha, 'DD/MM/YYYY') as fecha,
+                CASE 
+                    WHEN p.resultado LIKE '3-%' OR p.resultado LIKE '3 -%' THEN 'victoria'
+                    ELSE 'derrota'
+                END as resultado_tipo
             FROM partidos_new p
             JOIN equipos e ON p.equipo_id = e.id
-            JOIN categorias c ON e.categoria_id = c.id
-            {temp_filter}
+            WHERE p.resultado IS NOT NULL
             ORDER BY p.fecha DESC
             LIMIT 50
-        """), conn, params=params)
+        """), conn)
         return df.to_dict('records')
-
-def get_clasificacion(equipo_id, temporada_id=None):
-    """Obtiene posición aproximada en clasificación basada en victorias"""
-    # Por ahora solo devolvemos las stats del equipo
-    return get_equipo_stats(equipo_id, temporada_id)
 
 
 # ========== RUTAS ==========
@@ -239,37 +180,29 @@ def get_clasificacion(equipo_id, temporada_id=None):
 def index():
     """Página principal"""
     equipos = get_equipos()
-    temporadas = get_temporadas()
-    ultimos_resultados = get_todos_resultados()[:10]  # Últimos 10 partidos
+    ultimos_resultados = get_todos_resultados()[:10]
     return render_template('index.html', 
                           equipos=equipos, 
-                          temporadas=temporadas,
                           ultimos_resultados=ultimos_resultados)
 
 @app.route('/equip/<int:equipo_id>')
 def equipo(equipo_id):
     """Página de un equipo"""
     equipos = get_equipos()
-    temporadas = get_temporadas()
     
     # Buscar el equipo seleccionado
     equipo_info = next((e for e in equipos if e['id'] == equipo_id), None)
     if not equipo_info:
         return redirect(url_for('index'))
     
-    # Usar primera temporada activa por defecto
-    temporada_id = temporadas[0]['id'] if temporadas else None
-    
-    stats = get_equipo_stats(equipo_id, temporada_id)
+    stats = get_equipo_stats(equipo_id)
     jugadores = get_jugadores_equipo(equipo_id)
-    top_anotadores = get_top_anotadores(equipo_id, temporada_id)
-    partidos = get_partidos_equipo(equipo_id, temporada_id)
+    top_anotadores = get_top_anotadores(equipo_id)
+    partidos = get_partidos_equipo(equipo_id)
     
     return render_template('equipo.html', 
                           equipo=equipo_info,
                           equipos=equipos,
-                          temporadas=temporadas,
-                          temporada_actual=temporada_id,
                           stats=stats,
                           jugadores=jugadores,
                           top_anotadores=top_anotadores,
@@ -279,19 +212,15 @@ def equipo(equipo_id):
 def resultados():
     """Página de todos los resultados"""
     equipos = get_equipos()
-    temporadas = get_temporadas()
-    temporada_id = temporadas[0]['id'] if temporadas else None
-    resultados = get_todos_resultados(temporada_id)
+    resultados = get_todos_resultados()
     
     return render_template('resultados.html',
                           equipos=equipos,
-                          temporadas=temporadas,
                           resultados=resultados)
 
 @app.route('/login')
 def login():
     """Redirige a la app de Streamlit"""
-    # Cambia esta URL por la de tu app Streamlit
     return redirect("https://voleibolstats.com")
 
 @app.route('/ads.txt')
