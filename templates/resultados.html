@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block title %}Resultats - Voleibol Stats{% endblock %}
+
+{% block hero %}
+<section class="hero" style="padding: 2.5rem 0;">
+    <div class="container">
+        <div class="hero-content">
+            <h1 style="font-size: 2.25rem;"><i class="fas fa-list-ol"></i> Resultats</h1>
+            <p style="font-size: 1rem;">Tots els resultats dels equips de Voleibol Girona</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<!-- Ad Space -->
+<div class="ad-container">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9729217104813447"
+         data-ad-slot="YOUR_AD_SLOT_5"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- Filtros -->
+<div class="card" style="padding: 1rem 1.5rem;">
+    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <label style="font-weight: 600; color: var(--gray-600);">
+                <i class="fas fa-filter"></i> Filtrar per equip:
+            </label>
+            <select id="equipo-filter" onchange="filterResults()" 
+                    style="padding: 0.5rem 1rem; border-radius: 8px; border: 2px solid var(--gray-200); min-width: 180px;">
+                <option value="">Tots els equips</option>
+                {% for e in equipos %}
+                <option value="{{ e.nombre_completo }}">{{ e.nombre_completo }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <label style="font-weight: 600; color: var(--gray-600);">
+                <i class="fas fa-trophy"></i> Resultat:
+            </label>
+            <select id="resultado-filter" onchange="filterResults()" 
+                    style="padding: 0.5rem 1rem; border-radius: 8px; border: 2px solid var(--gray-200);">
+                <option value="">Tots</option>
+                <option value="victoria">Victòries</option>
+                <option value="derrota">Derrotes</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<!-- Tabla de Resultados -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title"><i class="fas fa-calendar-check"></i> Últims Partits</h2>
+        <span id="results-count" style="background: var(--primary); color: white; padding: 0.35rem 0.85rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;">
+            {{ resultados|length }} partits
+        </span>
+    </div>
+    
+    <div class="table-container">
+        <table id="results-table">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Equip</th>
+                    <th>Rival</th>
+                    <th style="text-align: center;">Resultat</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for partido in resultados %}
+                <tr data-equipo="{{ partido.equipo }}" data-resultado="{{ partido.resultado }}">
+                    <td style="white-space: nowrap;">
+                        <i class="fas fa-calendar" style="color: var(--gray-400); margin-right: 0.5rem;"></i>
+                        {{ partido.fecha }}
+                    </td>
+                    <td>
+                        <strong>{{ partido.equipo }}</strong>
+                    </td>
+                    <td>{{ partido.rival }}</td>
+                    <td style="text-align: center;">
+                        <span style="font-size: 1.35rem; font-weight: 800; {% if partido.resultado == 'victoria' %}color: var(--success);{% else %}color: var(--danger);{% endif %}">
+                            {{ partido.sets_local }} - {{ partido.sets_visitante }}
+                        </span>
+                    </td>
+                    <td>
+                        {% if partido.resultado == 'victoria' %}
+                        <span class="badge badge-success"><i class="fas fa-check"></i> Victòria</span>
+                        {% else %}
+                        <span class="badge badge-danger"><i class="fas fa-times"></i> Derrota</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Empty state -->
+    <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: var(--gray-500);">
+        <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; color: var(--gray-300);"></i>
+        <p style="font-size: 1.1rem;">No s'han trobat resultats amb els filtres seleccionats.</p>
+    </div>
+</div>
+
+<!-- Ad Space -->
+<div class="ad-container">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9729217104813447"
+         data-ad-slot="YOUR_AD_SLOT_6"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- Resumen por equipo -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title"><i class="fas fa-chart-bar"></i> Resum per Equip</h2>
+    </div>
+    
+    <div class="teams-grid">
+        {% for e in equipos %}
+        <a href="{{ url_for('equipo', equipo_id=e.id) }}" class="team-card">
+            <h3><i class="fas fa-volleyball-ball" style="color: var(--primary);"></i> {{ e.nombre }}</h3>
+            <p class="category"><i class="fas fa-tag"></i> {{ e.categoria }}</p>
+            <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="cta-section">
+    <h3><i class="fas fa-chart-line"></i> Vols analitzar els partits en detall?</h3>
+    <p>Inicia sessió per veure estadístiques completes de cada partit: accions, jugadors, distribució i molt més!</p>
+    <a href="{{ url_for('login') }}" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.85rem 2rem;">
+        <i class="fas fa-sign-in-alt"></i> Iniciar sessió
+    </a>
+</div>
+
+<script>
+function filterResults() {
+    const equipoFilter = document.getElementById('equipo-filter').value.toLowerCase();
+    const resultadoFilter = document.getElementById('resultado-filter').value;
+    const rows = document.querySelectorAll('#results-table tbody tr');
+    let visibleCount = 0;
+    
+    rows.forEach(row => {
+        const equipo = row.dataset.equipo.toLowerCase();
+        const resultado = row.dataset.resultado;
+        
+        const matchEquipo = !equipoFilter || equipo.includes(equipoFilter);
+        const matchResultado = !resultadoFilter || resultado === resultadoFilter;
+        
+        if (matchEquipo && matchResultado) {
+            row.style.display = '';
+            visibleCount++;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+    
+    // Update count
+    document.getElementById('results-count').textContent = visibleCount + ' partits';
+    
+    // Show/hide empty state
+    document.getElementById('no-results').style.display = visibleCount === 0 ? 'block' : 'none';
+    document.getElementById('results-table').style.display = visibleCount === 0 ? 'none' : '';
+}
+</script>
+{% endblock %}
