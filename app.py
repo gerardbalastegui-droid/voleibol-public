@@ -221,7 +221,7 @@ def resultados():
 @app.route('/login')
 def login():
     """Redirige a la app de Streamlit"""
-    return redirect("https://voleibolstats.com")
+    return redirect("https://app.voleibolstats.com")
 
 @app.route('/ads.txt')
 def ads_txt():
