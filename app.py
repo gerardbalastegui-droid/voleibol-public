@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, send_from_directory
 from sqlalchemy import create_engine, text
+from sqlalchemy.pool import QueuePool
 import os
 import pandas as pd
 
@@ -8,11 +9,27 @@ app = Flask(__name__)
 # Configuración de base de datos (usa la misma que Streamlit)
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
+# Variable global para reusar el engine
+_engine = None
+
 def get_engine():
-    """Obtiene conexión a la base de datos"""
+    """Obtiene conexión a la base de datos con pool limitado"""
+    global _engine
+    
+    if _engine is not None:
+        return _engine
+    
     if DATABASE_URL:
         url = DATABASE_URL.replace("postgres://", "postgresql://")
-        return create_engine(url)
+        _engine = create_engine(
+            url,
+            poolclass=QueuePool,
+            pool_size=2,
+            max_overflow=3,
+            pool_pre_ping=True,
+            pool_recycle=300
+        )
+        return _engine
     return None
 
 def get_equipos():
