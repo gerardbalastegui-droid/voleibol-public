@@ -67,10 +67,6 @@
             <div class="stat-value danger">{{ stats.derrotas or 0 }}</div>
             <div class="stat-label">Derrotes</div>
         </div>
-        <div class="stat-card">
-            <div class="stat-value">{{ stats.sets_favor|int }}-{{ stats.sets_contra|int }}</div>
-            <div class="stat-label">Sets (F-C)</div>
-        </div>
         {% if stats.partidos and stats.partidos > 0 %}
         <div class="stat-card">
             <div class="stat-value" style="color: var(--warning);">{{ ((stats.victorias or 0) / stats.partidos * 100)|round(1) }}%</div>
@@ -128,7 +124,7 @@
                     {% for jugador in jugadores %}
                     <tr>
                         <td><strong>{{ jugador.dorsal|int if jugador.dorsal else '-' }}</strong></td>
-                        <td>{{ jugador.nombre_completo }}</td>
+                        <td>{{ jugador.apellido }}</td>
                         <td><span style="color: var(--gray-500);">{{ jugador.posicion if jugador.posicion else '-' }}</span></td>
                     </tr>
                     {% endfor %}
@@ -166,6 +162,7 @@
                 <tr>
                     <th>Data</th>
                     <th>Rival</th>
+                    <th>Lloc</th>
                     <th>Resultat</th>
                     <th></th>
                 </tr>
@@ -175,16 +172,19 @@
                 <tr>
                     <td>{{ partido.fecha }}</td>
                     <td><strong>{{ partido.rival }}</strong></td>
+                    <td>{{ 'Casa' if partido.local else 'Fora' }}</td>
                     <td>
-                        <span style="font-size: 1.25rem; font-weight: 700; {% if partido.resultado == 'victoria' %}color: var(--success);{% else %}color: var(--danger);{% endif %}">
-                            {{ partido.sets_local }} - {{ partido.sets_visitante }}
+                        <span style="font-size: 1.1rem; font-weight: 700; {% if partido.resultado_tipo == 'victoria' %}color: var(--success);{% else %}color: var(--danger);{% endif %}">
+                            {{ partido.resultado if partido.resultado else '-' }}
                         </span>
                     </td>
                     <td>
-                        {% if partido.resultado == 'victoria' %}
-                        <span class="badge badge-success"><i class="fas fa-check"></i> Victòria</span>
-                        {% else %}
-                        <span class="badge badge-danger"><i class="fas fa-times"></i> Derrota</span>
+                        {% if partido.resultado %}
+                            {% if partido.resultado_tipo == 'victoria' %}
+                            <span class="badge badge-success"><i class="fas fa-check"></i> V</span>
+                            {% else %}
+                            <span class="badge badge-danger"><i class="fas fa-times"></i> D</span>
+                            {% endif %}
                         {% endif %}
                     </td>
                 </tr>

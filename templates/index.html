@@ -42,6 +42,7 @@
                     <th>Data</th>
                     <th>Equip</th>
                     <th>Rival</th>
+                    <th>Lloc</th>
                     <th>Resultat</th>
                     <th></th>
                 </tr>
@@ -52,12 +53,13 @@
                     <td>{{ partido.fecha }}</td>
                     <td><strong>{{ partido.equipo }}</strong></td>
                     <td>{{ partido.rival }}</td>
-                    <td><strong>{{ partido.sets_local }} - {{ partido.sets_visitante }}</strong></td>
+                    <td>{{ 'Casa' if partido.local else 'Fora' }}</td>
+                    <td><strong>{{ partido.resultado }}</strong></td>
                     <td>
-                        {% if partido.resultado == 'victoria' %}
-                        <span class="badge badge-success"><i class="fas fa-check"></i> Victòria</span>
+                        {% if partido.resultado_tipo == 'victoria' %}
+                        <span class="badge badge-success"><i class="fas fa-check"></i> V</span>
                         {% else %}
-                        <span class="badge badge-danger"><i class="fas fa-times"></i> Derrota</span>
+                        <span class="badge badge-danger"><i class="fas fa-times"></i> D</span>
                         {% endif %}
                     </td>
                 </tr>
@@ -75,8 +77,7 @@
 <div class="teams-grid">
     {% for equipo in equipos %}
     <a href="{{ url_for('equipo', equipo_id=equipo.id) }}" class="team-card">
-        <h3><i class="fas fa-volleyball-ball" style="color: var(--primary);"></i> {{ equipo.nombre }}</h3>
-        <p class="category"><i class="fas fa-tag"></i> {{ equipo.categoria }}</p>
+        <h3><i class="fas fa-volleyball-ball" style="color: var(--primary);"></i> {{ equipo.nombre_completo }}</h3>
         <span class="arrow"><i class="fas fa-chevron-right"></i></span>
     </a>
     {% endfor %}
