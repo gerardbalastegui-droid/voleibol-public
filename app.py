@@ -1,10 +1,49 @@
-from flask import Flask, render_template, redirect, url_for, send_from_directory
+from flask import Flask, render_template, redirect, url_for, send_from_directory, request, session, g
+from flask_babel import Babel, gettext as _, lazy_gettext as _l
 from sqlalchemy import create_engine, text
 from sqlalchemy.pool import QueuePool
 import os
 import pandas as pd
 
 app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY", "voleibol-stats-secret-key-2024")
+
+# Configuración de idiomas
+app.config['LANGUAGES'] = ['ca', 'es', 'en']
+app.config['BABEL_DEFAULT_LOCALE'] = 'ca'
+app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
+
+babel = Babel()
+
+def get_locale():
+    """Determina el idioma a usar"""
+    # 1. Primero comprobar si hay idioma en la URL (?lang=es)
+    lang = request.args.get('lang')
+    if lang and lang in app.config['LANGUAGES']:
+        session['lang'] = lang
+        return lang
+    
+    # 2. Comprobar si hay idioma guardado en sesión
+    if 'lang' in session and session['lang'] in app.config['LANGUAGES']:
+        return session['lang']
+    
+    # 3. Detectar del navegador
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+
+babel.init_app(app, locale_selector=get_locale)
+
+@app.context_processor
+def inject_locale():
+    """Inyecta el idioma actual en todos los templates"""
+    return {
+        'current_lang': get_locale(),
+        'languages': [
+            {'code': 'ca', 'name': 'Català', 'flag': '🏴󠁧󠁢󠁣󠁴󠁿'},
+            {'code': 'es', 'name': 'Español', 'flag': '🇪🇸'},
+            {'code': 'en', 'name': 'English', 'flag': '🇬🇧'}
+        ]
+    }
+
 
 # Configuración de base de datos (usa la misma que Streamlit)
 DATABASE_URL = os.environ.get("DATABASE_URL")
@@ -274,6 +313,15 @@ def cookies():
 def com_funciona():
     """Com Funciona"""
     return render_template('com-funciona.html')
+
+@app.route('/set-language/<lang>')
+def set_language(lang):
+    """Cambiar idioma"""
+    if lang in app.config['LANGUAGES']:
+        session['lang'] = lang
+    # Volver a la página anterior o al inicio
+    return redirect(request.referrer or url_for('index'))
+
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
