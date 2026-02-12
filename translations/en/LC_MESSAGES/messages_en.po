@@ -1,0 +1,368 @@
+# English translations for VoleibolStats
+# This file is distributed under the same license as the VoleibolStats project.
+msgid ""
+msgstr ""
+"Project-Id-Version: VoleibolStats 1.0\n"
+"Report-Msgid-Bugs-To: voleibolstats@gmail.com\n"
+"POT-Creation-Date: 2024-02-11 10:00+0100\n"
+"PO-Revision-Date: 2024-02-11 10:00+0100\n"
+"Last-Translator: Gerard Balastegui\n"
+"Language: en\n"
+"Language-Team: en <voleibolstats@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+# Base template - Header
+msgid "VoleibolStats - Estadístiques Oficials"
+msgstr "VoleibolStats - Official Statistics"
+
+msgid "Actualitzat en temps real"
+msgstr "Updated in real time"
+
+msgid "Estadístiques de voleibol en temps real - Voleibol Girona"
+msgstr "Real-time volleyball statistics - Voleibol Girona"
+
+# Navigation
+msgid "Inici"
+msgstr "Home"
+
+msgid "Resultats"
+msgstr "Results"
+
+msgid "Qui Som"
+msgstr "About Us"
+
+msgid "Contacte"
+msgstr "Contact"
+
+msgid "Accedir"
+msgstr "Login"
+
+msgid "Com Funciona"
+msgstr "How It Works"
+
+# Footer
+msgid "Navegació"
+msgstr "Navigation"
+
+msgid "Legal"
+msgstr "Legal"
+
+msgid "Avís Legal"
+msgstr "Legal Notice"
+
+msgid "Privacitat"
+msgstr "Privacy"
+
+msgid "Cookies"
+msgstr "Cookies"
+
+msgid "Plataforma d'estadístiques avançades per a equips de voleibol."
+msgstr "Advanced statistics platform for volleyball teams."
+
+msgid "Desenvolupat amb ❤️ per"
+msgstr "Developed with ❤️ by"
+
+msgid "Tots els drets reservats."
+msgstr "All rights reserved."
+
+# Index page
+msgid "Sistema d'Estadístiques de Voleibol"
+msgstr "Volleyball Statistics System"
+
+msgid "Estadístiques en temps real dels equips de Voleibol Girona. Segueix el rendiment, descobreix tendències i analitza cada partit."
+msgstr "Real-time statistics of Voleibol Girona teams. Track performance, discover trends and analyze every match."
+
+msgid "Últims Resultats"
+msgstr "Latest Results"
+
+msgid "Veure tots"
+msgstr "View all"
+
+msgid "Data"
+msgstr "Date"
+
+msgid "Equip"
+msgstr "Team"
+
+msgid "Rival"
+msgstr "Opponent"
+
+msgid "Lloc"
+msgstr "Location"
+
+msgid "Resultat"
+msgstr "Result"
+
+msgid "Casa"
+msgstr "Home"
+
+msgid "Fora"
+msgstr "Away"
+
+msgid "Victòria"
+msgstr "Win"
+
+msgid "Derrota"
+msgstr "Loss"
+
+msgid "Equips"
+msgstr "Teams"
+
+msgid "Selecciona un equip per veure les seves estadístiques detallades"
+msgstr "Select a team to view their detailed statistics"
+
+msgid "Funcionalitats"
+msgstr "Features"
+
+msgid "Estadístiques"
+msgstr "Statistics"
+
+msgid "Dades detallades per partit i temporada"
+msgstr "Detailed data per match and season"
+
+msgid "Jugadors"
+msgstr "Players"
+
+msgid "Anàlisi individual de rendiment"
+msgstr "Individual performance analysis"
+
+msgid "Rotacions"
+msgstr "Rotations"
+
+msgid "Distribució del col·locador"
+msgstr "Setter distribution"
+
+msgid "Rànquings"
+msgstr "Rankings"
+
+msgid "Top anotadors i millors jugadors"
+msgstr "Top scorers and best players"
+
+msgid "Vols accedir a totes les funcionalitats?"
+msgstr "Want to access all features?"
+
+msgid "Inicia sessió per desbloquejar l'anàlisi complet: side-out, contraatac, moments crítics, tendències i molt més!"
+msgstr "Log in to unlock full analysis: side-out, counter-attack, critical moments, trends and much more!"
+
+msgid "Iniciar sessió"
+msgstr "Log in"
+
+# Equipo page
+msgid "Estadístiques i resultats de l'equip"
+msgstr "Team statistics and results"
+
+msgid "Canviar equip:"
+msgstr "Change team:"
+
+msgid "Estadístiques Generals"
+msgstr "General Statistics"
+
+msgid "Partits"
+msgstr "Matches"
+
+msgid "Victòries"
+msgstr "Wins"
+
+msgid "Derrotes"
+msgstr "Losses"
+
+msgid "% Victòries"
+msgstr "Win %"
+
+msgid "Top 5 Anotadors"
+msgstr "Top 5 Scorers"
+
+msgid "Plantilla"
+msgstr "Roster"
+
+msgid "jugadors"
+msgstr "players"
+
+msgid "Jugador"
+msgstr "Player"
+
+msgid "Posició"
+msgstr "Position"
+
+msgid "Historial de Partits"
+msgstr "Match History"
+
+msgid "partits"
+msgstr "matches"
+
+msgid "Vols veure l'anàlisi complet?"
+msgstr "Want to see the full analysis?"
+
+msgid "Inicia sessió per accedir a estadístiques avançades: distribució del col·locador, side-out, contraatac, anàlisi per rotació, tendències i molt més!"
+msgstr "Log in to access advanced statistics: setter distribution, side-out, counter-attack, rotation analysis, trends and much more!"
+
+# Resultados page
+msgid "Tots els resultats dels equips de Voleibol Girona"
+msgstr "All results from Voleibol Girona teams"
+
+msgid "Filtrar per equip:"
+msgstr "Filter by team:"
+
+msgid "Tots els equips"
+msgstr "All teams"
+
+msgid "Tots"
+msgstr "All"
+
+msgid "Últims Partits"
+msgstr "Latest Matches"
+
+msgid "No s'han trobat resultats amb els filtres seleccionats."
+msgstr "No results found with the selected filters."
+
+msgid "Resum per Equip"
+msgstr "Summary by Team"
+
+msgid "Vols analitzar els partits en detall?"
+msgstr "Want to analyze matches in detail?"
+
+msgid "Inicia sessió per veure estadístiques completes de cada partit: accions, jugadors, distribució i molt més!"
+msgstr "Log in to see complete statistics for each match: actions, players, distribution and much more!"
+
+# Qui Som page
+msgid "Coneix el projecte Voleibol Stats"
+msgstr "Get to know the Voleibol Stats project"
+
+msgid "El Projecte"
+msgstr "The Project"
+
+msgid "Què Oferim"
+msgstr "What We Offer"
+
+msgid "Tecnologia"
+msgstr "Technology"
+
+msgid "El Desenvolupador"
+msgstr "The Developer"
+
+msgid "Tens preguntes?"
+msgstr "Have questions?"
+
+msgid "Si vols més informació sobre el projecte o estàs interessat en utilitzar Voleibol Stats per al teu equip, no dubtis en contactar-nos."
+msgstr "If you want more information about the project or are interested in using Voleibol Stats for your team, don't hesitate to contact us."
+
+msgid "Contactar"
+msgstr "Contact"
+
+# Contacte page
+msgid "Posa't en contacte amb nosaltres"
+msgstr "Get in touch with us"
+
+msgid "Escriu-nos"
+msgstr "Write to us"
+
+msgid "Si tens preguntes, suggeriments o vols informació sobre com utilitzar Voleibol Stats per al teu equip, no dubtis en contactar-nos."
+msgstr "If you have questions, suggestions or want information on how to use Voleibol Stats for your team, don't hesitate to contact us."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "Temps de resposta"
+msgstr "Response time"
+
+msgid "Normalment responem en menys de 24-48 hores."
+msgstr "We usually respond within 24-48 hours."
+
+msgid "Preguntes Freqüents"
+msgstr "Frequently Asked Questions"
+
+msgid "Com puc utilitzar Voleibol Stats per al meu equip?"
+msgstr "How can I use Voleibol Stats for my team?"
+
+msgid "Les estadístiques són en temps real?"
+msgstr "Are the statistics in real time?"
+
+msgid "Puc accedir a estadístiques de temporades anteriors?"
+msgstr "Can I access statistics from previous seasons?"
+
+msgid "Com es recullen les dades dels partits?"
+msgstr "How is match data collected?"
+
+msgid "Suporta el Projecte"
+msgstr "Support the Project"
+
+msgid "Ja tens compte?"
+msgstr "Already have an account?"
+
+msgid "Accedeix a la plataforma completa amb totes les funcionalitats d'anàlisi."
+msgstr "Access the full platform with all analysis features."
+
+# Com Funciona page
+msgid "Guia per treure el màxim profit de Voleibol Stats"
+msgstr "Guide to get the most out of Voleibol Stats"
+
+msgid "Introducció"
+msgstr "Introduction"
+
+msgid "Accés Públic vs Privat"
+msgstr "Public vs Private Access"
+
+msgid "Accés Públic (Sense registre)"
+msgstr "Public Access (No registration)"
+
+msgid "Accés Privat (Amb registre)"
+msgstr "Private Access (With registration)"
+
+msgid "Navegar per la Web Pública"
+msgstr "Navigate the Public Website"
+
+msgid "Pàgina d'Inici"
+msgstr "Home Page"
+
+msgid "Pàgina d'Equip"
+msgstr "Team Page"
+
+msgid "Pàgina de Resultats"
+msgstr "Results Page"
+
+msgid "Funcionalitats Avançades (Usuaris Registrats)"
+msgstr "Advanced Features (Registered Users)"
+
+msgid "Estadístiques per Acció"
+msgstr "Statistics by Action"
+
+msgid "Perfil de Jugador"
+msgstr "Player Profile"
+
+msgid "Distribució del Col·locador"
+msgstr "Setter Distribution"
+
+msgid "Anàlisi per Rotació"
+msgstr "Rotation Analysis"
+
+msgid "Side-out i Contraatac"
+msgstr "Side-out and Counter-attack"
+
+msgid "Entendre les Estadístiques"
+msgstr "Understanding Statistics"
+
+msgid "Sistema de Marcatge"
+msgstr "Marking System"
+
+msgid "Fórmules"
+msgstr "Formulas"
+
+msgid "Consells d'Ús"
+msgstr "Usage Tips"
+
+msgid "Preparat per començar?"
+msgstr "Ready to start?"
+
+# Legal pages
+msgid "Informació legal del lloc web"
+msgstr "Legal information of the website"
+
+msgid "Última actualització: Febrer 2026"
+msgstr "Last updated: February 2026"
