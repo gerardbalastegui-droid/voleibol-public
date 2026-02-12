@@ -25,6 +25,66 @@ msgstr "Updated in real time"
 msgid "Estadístiques de voleibol en temps real - Voleibol Girona"
 msgstr "Real-time volleyball statistics - Voleibol Girona"
 
+msgid "Posa't en contacte amb nosaltres"
+msgstr "Get in touch with us"
+
+msgid "Escriu-nos"
+msgstr "Write to us"
+
+msgid "Si tens preguntes, suggeriments o vols informació sobre com utilitzar Voleibol Stats per al teu equip, no dubtis en contactar-nos."
+msgstr "If you have questions, suggestions or want information about how to use Voleibol Stats for your team, don't hesitate to contact us."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Temps de resposta"
+msgstr "Response time"
+
+msgid "Normalment responem en menys de 24-48 hores."
+msgstr "We usually respond within 24-48 hours."
+
+msgid "Preguntes Freqüents"
+msgstr "Frequently Asked Questions"
+
+msgid "Com puc utilitzar Voleibol Stats per al meu equip?"
+msgstr "How can I use Voleibol Stats for my team?"
+
+msgid "Actualment Voleibol Stats està disponible per als equips de Voleibol Girona. Si estàs interessat en utilitzar-lo per al teu club, contacta'ns i estudiarem la possibilitat."
+msgstr "Currently Voleibol Stats is available for Voleibol Girona teams. If you're interested in using it for your club, contact us and we'll study the possibility."
+
+msgid "Les estadístiques són en temps real?"
+msgstr "Are the statistics in real time?"
+
+msgid "Les estadístiques s'actualitzen després de cada partit, normalment en les 24 hores posteriors a la finalització del partit."
+msgstr "Statistics are updated after each match, usually within 24 hours after the end of the match."
+
+msgid "Puc accedir a estadístiques de temporades anteriors?"
+msgstr "Can I access statistics from previous seasons?"
+
+msgid "Sí, la plataforma guarda l'historial de totes les temporades. Els usuaris registrats poden accedir a dades històriques des del panell d'administració."
+msgstr "Yes, the platform keeps the history of all seasons. Registered users can access historical data from the admin panel."
+
+msgid "Com es recullen les dades dels partits?"
+msgstr "How is match data collected?"
+
+msgid "Les dades es recullen manualment durant els partits utilitzant aplicacions especialitzades d'estadístiques de voleibol, i després s'importen a la nostra plataforma."
+msgstr "Data is collected manually during matches using specialized volleyball statistics applications, and then imported to our platform."
+
+msgid "Suporta el Projecte"
+msgstr "Support the Project"
+
+msgid "Voleibol Stats és un projecte independent i sense ànim de lucre. Si t'agrada el que fem i vols ajudar a mantenir el projecte, pots convidar-nos a un cafè!"
+msgstr "Voleibol Stats is an independent non-profit project. If you like what we do and want to help maintain the project, you can buy us a coffee!"
+
+msgid "Convida'm a un cafè"
+msgstr "Buy me a coffee"
+
+msgid "Ja tens compte?"
+msgstr "Already have an account?"
+
+msgid "Accedeix a la plataforma completa amb totes les funcionalitats d'anàlisi."
+msgstr "Access the full platform with all analysis features."
+
 msgid "Coneix el projecte Voleibol Stats"
 msgstr "Get to know the Voleibol Stats project"
 
