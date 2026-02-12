@@ -125,7 +125,7 @@
                     <tr>
                         <td><strong>{{ jugador.dorsal|int if jugador.dorsal else '-' }}</strong></td>
                         <td>{{ jugador.apellido }}</td>
-                        <td><span style="color: var(--gray-500);">{{ jugador.posicion if jugador.posicion else '-' }}</span></td>
+                        <td><span style="color: var(--gray-500);">{{ jugador.posicion|traducir_posicion }}</span></td>
                     </tr>
                     {% endfor %}
                 </tbody>
