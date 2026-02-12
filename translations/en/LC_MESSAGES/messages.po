@@ -25,6 +25,81 @@ msgstr "Updated in real time"
 msgid "Estadístiques de voleibol en temps real - Voleibol Girona"
 msgstr "Real-time volleyball statistics - Voleibol Girona"
 
+msgid "Coneix el projecte Voleibol Stats"
+msgstr "Get to know the Voleibol Stats project"
+
+msgid "El Projecte"
+msgstr "The Project"
+
+msgid "<strong>Voleibol Stats</strong> és una plataforma d'estadístiques avançades per a equips de voleibol, desenvolupada amb l'objectiu de proporcionar eines d'anàlisi professional a clubs i entrenadors."
+msgstr "<strong>Voleibol Stats</strong> is an advanced statistics platform for volleyball teams, developed with the goal of providing professional analysis tools to clubs and coaches."
+
+msgid "El projecte va néixer de la passió pel voleibol i la necessitat de tenir dades detallades sobre el rendiment dels equips i jugadors. Actualment donem servei als equips de <strong>Voleibol Girona</strong>, oferint estadístiques en temps real de tots els seus partits."
+msgstr "The project was born from a passion for volleyball and the need for detailed data on team and player performance. We currently serve the teams of <strong>Voleibol Girona</strong>, offering real-time statistics for all their matches."
+
+msgid "La nostra missió és democratitzar l'accés a les estadístiques esportives, permetent que equips de totes les categories puguin analitzar el seu rendiment amb les mateixes eines que utilitzen els equips professionals."
+msgstr "Our mission is to democratize access to sports statistics, allowing teams of all levels to analyze their performance with the same tools used by professional teams."
+
+msgid "Què Oferim"
+msgstr "What We Offer"
+
+msgid "Estadístiques Completes"
+msgstr "Complete Statistics"
+
+msgid "Registrem totes les accions del joc: atacs, recepcions, saques, bloquejos i defenses, amb indicadors de qualitat per a cada acció."
+msgstr "We record all game actions: attacks, receptions, serves, blocks and digs, with quality indicators for each action."
+
+msgid "Anàlisi Individual"
+msgstr "Individual Analysis"
+
+msgid "Cada jugador té el seu perfil amb estadístiques detallades, evolució temporal i comparatives amb la resta de l'equip."
+msgstr "Each player has their profile with detailed statistics, time evolution and comparisons with the rest of the team."
+
+msgid "Anàlisi per Rotació"
+msgstr "Rotation Analysis"
+
+msgid "Visualitza el rendiment de l'equip en cada rotació, amb distribució del col·locador i eficàcia d'atac per zona."
+msgstr "Visualize the team's performance in each rotation, with setter distribution and attack efficiency by zone."
+
+msgid "Rànquings i Assoliments"
+msgstr "Rankings and Achievements"
+
+msgid "Sistema de badges i assoliments per motivar els jugadors, amb rànquings actualitzats en temps real."
+msgstr "Badge and achievement system to motivate players, with rankings updated in real time."
+
+msgid "Tecnologia"
+msgstr "Technology"
+
+msgid "Voleibol Stats està construït amb tecnologies modernes per garantir velocitat, fiabilitat i escalabilitat:"
+msgstr "Voleibol Stats is built with modern technologies to ensure speed, reliability and scalability:"
+
+msgid "Base de dades"
+msgstr "Database"
+
+msgid "Visualitzacions"
+msgstr "Visualizations"
+
+msgid "per a gràfics interactius"
+msgstr "for interactive charts"
+
+msgid "El Desenvolupador"
+msgstr "The Developer"
+
+msgid "Voleibol Stats ha estat creat per <strong>Gerard Balastegui Mera</strong>, jugador i entusiasta del voleibol amb experiència en desenvolupament de programari i anàlisi de dades."
+msgstr "Voleibol Stats was created by <strong>Gerard Balastegui Mera</strong>, a volleyball player and enthusiast with experience in software development and data analysis."
+
+msgid "El projecte va començar com una eina personal per analitzar els partits del seu equip i ha evolucionat fins a convertir-se en una plataforma completa d'estadístiques."
+msgstr "The project started as a personal tool to analyze his team's matches and has evolved into a complete statistics platform."
+
+msgid "Tens preguntes?"
+msgstr "Have questions?"
+
+msgid "Si vols més informació sobre el projecte o estàs interessat en utilitzar Voleibol Stats per al teu equip, no dubtis en contactar-nos."
+msgstr "If you want more information about the project or are interested in using Voleibol Stats for your team, don't hesitate to contact us."
+
+msgid "Contactar"
+msgstr "Contact"
+
 msgid "Filtrar per equip"
 msgstr "Filter by team"
 
