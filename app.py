@@ -245,6 +245,20 @@ def ads_txt():
     """Servir ads.txt para Google AdSense"""
     return send_from_directory('static', 'ads.txt')
 
+@app.route('/quisom')
+def quisom():
+    """Página Qui Som"""
+    return render_template('quisom.html')
+
+@app.route('/contacte')
+def contacte():
+    """Página de contacto"""
+    return render_template('contacte.html')
+
+@app.route('/privacitat')
+def privacitat():
+    """Política de privacitat"""
+    return render_template('privacitat.html')
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
