@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Qui Som - Voleibol Stats{% endblock %}
+
+{% block hero %}
+<section class="hero" style="padding: 2.5rem 0;">
+    <div class="container">
+        <div class="hero-content">
+            <h1 style="font-size: 2.25rem;"><i class="fas fa-info-circle"></i> Qui Som</h1>
+            <p style="font-size: 1rem;">Coneix el projecte Voleibol Stats</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-volleyball-ball"></i> El Projecte</h2>
+    <p style="margin-bottom: 1rem;">
+        <strong>Voleibol Stats</strong> és una plataforma d'estadístiques avançades per a equips de voleibol, 
+        desenvolupada amb l'objectiu de proporcionar eines d'anàlisi professional a clubs i entrenadors.
+    </p>
+    <p style="margin-bottom: 1rem;">
+        El projecte va néixer de la passió pel voleibol i la necessitat de tenir dades detallades 
+        sobre el rendiment dels equips i jugadors. Actualment donem servei als equips de 
+        <strong>Voleibol Girona</strong>, oferint estadístiques en temps real de tots els seus partits.
+    </p>
+    <p>
+        La nostra missió és democratitzar l'accés a les estadístiques esportives, 
+        permetent que equips de totes les categories puguin analitzar el seu rendiment 
+        amb les mateixes eines que utilitzen els equips professionals.
+    </p>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-chart-line"></i> Què Oferim</h2>
+    <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+        <div class="stat-card" style="text-align: left; padding: 1.5rem;">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-table"></i> Estadístiques Completes</h4>
+            <p style="font-size: 0.9rem; color: var(--gray-600);">
+                Registrem totes les accions del joc: atacs, recepcions, saques, bloquejos i defenses, 
+                amb indicadors de qualitat per a cada acció.
+            </p>
+        </div>
+        <div class="stat-card" style="text-align: left; padding: 1.5rem;">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-user"></i> Anàlisi Individual</h4>
+            <p style="font-size: 0.9rem; color: var(--gray-600);">
+                Cada jugador té el seu perfil amb estadístiques detallades, evolució temporal 
+                i comparatives amb la resta de l'equip.
+            </p>
+        </div>
+        <div class="stat-card" style="text-align: left; padding: 1.5rem;">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-sync-alt"></i> Anàlisi per Rotació</h4>
+            <p style="font-size: 0.9rem; color: var(--gray-600);">
+                Visualitza el rendiment de l'equip en cada rotació, amb distribució del col·locador 
+                i eficàcia d'atac per zona.
+            </p>
+        </div>
+        <div class="stat-card" style="text-align: left; padding: 1.5rem;">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-trophy"></i> Rànquings i Assoliments</h4>
+            <p style="font-size: 0.9rem; color: var(--gray-600);">
+                Sistema de badges i assoliments per motivar els jugadors, amb rànquings 
+                actualitzats en temps real.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-code"></i> Tecnologia</h2>
+    <p style="margin-bottom: 1rem;">
+        Voleibol Stats està construït amb tecnologies modernes per garantir velocitat, fiabilitat i escalabilitat:
+    </p>
+    <ul style="margin-left: 1.5rem; color: var(--gray-600);">
+        <li style="margin-bottom: 0.5rem;"><strong>Backend:</strong> Python amb Flask i Streamlit</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Base de dades:</strong> PostgreSQL a Supabase</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Hosting:</strong> Railway</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Visualitzacions:</strong> Plotly per a gràfics interactius</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-user-tie"></i> El Desenvolupador</h2>
+    <p style="margin-bottom: 1rem;">
+        Voleibol Stats ha estat creat per <strong>Gerard Balastegui Mera</strong>, jugador i entusiasta del voleibol 
+        amb experiència en desenvolupament de programari i anàlisi de dades.
+    </p>
+    <p style="margin-bottom: 1rem;">
+        El projecte va començar com una eina personal per analitzar els partits del seu equip 
+        i ha evolucionat fins a convertir-se en una plataforma completa d'estadístiques.
+    </p>
+    <div class="social-links" style="margin-top: 1rem;">
+        <a href="https://instagram.com/gerardbalastegui" target="_blank" style="margin-right: 1rem;">
+            <i class="fab fa-instagram"></i> @gerardbalastegui
+        </a>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="cta-section">
+    <h3><i class="fas fa-envelope"></i> Tens preguntes?</h3>
+    <p>Si vols més informació sobre el projecte o estàs interessat en utilitzar Voleibol Stats per al teu equip, no dubtis en contactar-nos.</p>
+    <a href="{{ url_for('contacte') }}" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.85rem 2rem;">
+        <i class="fas fa-paper-plane"></i> Contactar
+    </a>
+</div>
+{% endblock %}
