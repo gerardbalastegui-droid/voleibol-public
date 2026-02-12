@@ -750,13 +750,21 @@
                     <div class="nav-container" id="nav-container">
                         <!-- Selector de idioma -->
                         <div class="language-selector">
-                            {% for lang in languages %}
-                                <a href="{{ url_for('set_language', lang=lang.code) }}" 
-                                   class="lang-btn {% if current_lang == lang.code %}active{% endif %}"
-                                   title="{{ lang.name }}">
-                                    {{ lang.flag }}
-                                </a>
-                            {% endfor %}
+                            <a href="{{ url_for('set_language', lang='ca') }}" 
+                               class="lang-btn {% if current_lang == 'ca' %}active{% endif %}"
+                               title="Català">
+                                <img src="https://flagcdn.com/24x18/es-ct.png" alt="Català" width="24" height="18">
+                            </a>
+                            <a href="{{ url_for('set_language', lang='es') }}" 
+                               class="lang-btn {% if current_lang == 'es' %}active{% endif %}"
+                               title="Español">
+                                <img src="https://flagcdn.com/24x18/es.png" alt="Español" width="24" height="18">
+                            </a>
+                            <a href="{{ url_for('set_language', lang='en') }}" 
+                               class="lang-btn {% if current_lang == 'en' %}active{% endif %}"
+                               title="English">
+                                <img src="https://flagcdn.com/24x18/gb.png" alt="English" width="24" height="18">
+                            </a>
                         </div>
                         
                         <nav id="main-nav">
