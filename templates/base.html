@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -710,6 +710,12 @@
                         <a href="{{ url_for('resultados') }}" class="{% if request.endpoint == 'resultados' %}active{% endif %}">
                             <i class="fas fa-list"></i> Resultats
                         </a>
+                        <a href="{{ url_for('quisom') }}" class="{% if request.endpoint == 'quisom' %}active{% endif %}">
+                            <i class="fas fa-info-circle"></i> Qui Som
+                        </a>
+                        <a href="{{ url_for('contacte') }}" class="{% if request.endpoint == 'contacte' %}active{% endif %}">
+                            <i class="fas fa-envelope"></i> Contacte
+                        </a>
                         <a href="{{ url_for('login') }}" class="btn btn-primary">
                             <i class="fas fa-sign-in-alt"></i> Accedir
                         </a>
@@ -744,7 +750,9 @@
                     <h4>Navegació</h4>
                     <a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Inici</a>
                     <a href="{{ url_for('resultados') }}"><i class="fas fa-list"></i> Resultats</a>
-                    <a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Accedir</a>
+                    <a href="{{ url_for('quisom') }}"><i class="fas fa-info-circle"></i> Qui Som</a>
+                    <a href="{{ url_for('contacte') }}"><i class="fas fa-envelope"></i> Contacte</a>
+                    <a href="{{ url_for('privacitat') }}"><i class="fas fa-shield-alt"></i> Privacitat</a>
                 </div>
                 <div class="footer-section">
                     <h4>Contacte</h4>
