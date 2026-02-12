@@ -128,21 +128,30 @@
             display: flex;
             gap: 0.5rem;
             margin-right: 1rem;
+            align-items: center;
         }
         
         .lang-btn {
-            font-size: 1.25rem;
             text-decoration: none;
             opacity: 0.6;
             transition: all 0.3s;
             padding: 0.25rem;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            border-radius: 4px;
         }
         
         .lang-btn:hover,
         .lang-btn.active {
             opacity: 1;
             transform: scale(1.15);
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .lang-btn img {
+            display: block;
+            border-radius: 2px;
         }
         
         .nav-container {
