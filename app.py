@@ -32,6 +32,40 @@ def get_locale():
 
 babel.init_app(app, locale_selector=get_locale)
 
+# Diccionario de traducciones para valores de base de datos
+TRADUCCIONES_POSICIONES = {
+    'ca': {
+        'Colocador': 'Col·locador',
+        'Receptor': 'Receptor',
+        'Opuesto': 'Opost',
+        'Central': 'Central',
+        'Líbero': 'Líbero'
+    },
+    'es': {
+        'Colocador': 'Colocador',
+        'Receptor': 'Receptor',
+        'Opuesto': 'Opuesto',
+        'Central': 'Central',
+        'Líbero': 'Líbero'
+    },
+    'en': {
+        'Colocador': 'Setter',
+        'Receptor': 'Outside Hitter',
+        'Opuesto': 'Opposite',
+        'Central': 'Middle Blocker',
+        'Líbero': 'Libero'
+    }
+}
+
+@app.template_filter('traducir_posicion')
+def traducir_posicion(posicion):
+    """Filtro para traducir posiciones de jugadores"""
+    if not posicion:
+        return '-'
+    lang = get_locale()
+    traducciones = TRADUCCIONES_POSICIONES.get(lang, TRADUCCIONES_POSICIONES['ca'])
+    return traducciones.get(posicion, posicion)
+
 @app.context_processor
 def inject_locale():
     """Inyecta el idioma actual en todos los templates"""
