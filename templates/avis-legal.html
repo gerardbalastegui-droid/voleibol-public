@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block title %}Avís Legal - Voleibol Stats{% endblock %}
+
+{% block hero %}
+<section class="hero" style="padding: 2.5rem 0;">
+    <div class="container">
+        <div class="hero-content">
+            <h1 style="font-size: 2.25rem;"><i class="fas fa-gavel"></i> Avís Legal</h1>
+            <p style="font-size: 1rem;">Informació legal del lloc web</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-user"></i> Identificació del Titular</h2>
+    <p style="margin-bottom: 1rem; color: var(--gray-600);">
+        En compliment de l'article 10 de la Llei 34/2002, d'11 de juliol, de Serveis de la Societat 
+        de la Informació i Comerç Electrònic (LSSICE), s'informa als usuaris de les dades del titular:
+    </p>
+    <ul style="margin-left: 1.5rem; color: var(--gray-600);">
+        <li><strong>Titular:</strong> Gerard Balastegui Mera</li>
+        <li><strong>Lloc web:</strong> www.voleibolstats.com</li>
+        <li><strong>Email:</strong> voleibolstats@gmail.com</li>
+        <li><strong>Activitat:</strong> Plataforma d'estadístiques esportives de voleibol</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-globe"></i> Objecte del Lloc Web</h2>
+    <p style="margin-bottom: 1rem; color: var(--gray-600);">
+        Voleibol Stats és una plataforma dedicada a la recopilació, anàlisi i visualització 
+        d'estadístiques de partits de voleibol. El lloc web ofereix:
+    </p>
+    <ul style="margin-left: 1.5rem; color: var(--gray-600);">
+        <li>Estadístiques públiques d'equips i partits</li>
+        <li>Anàlisi detallat per a usuaris registrats</li>
+        <li>Rànquings i classificacions de jugadors</li>
+        <li>Històric de resultats i rendiment</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-users"></i> Usuaris</h2>
+    <p style="margin-bottom: 1rem; color: var(--gray-600);">
+        L'accés i/o ús d'aquest lloc web atribueix la condició d'usuari, que accepta, 
+        des d'aquest accés i/o ús, les condicions generals d'ús aquí reflectides.
+    </p>
+    <p style="color: var(--gray-600);">
+        Algunes seccions del lloc web requereixen registre previ. Els usuaris registrats 
+        es comprometen a proporcionar informació veraç i a fer un ús adequat de la plataforma.
+    </p>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-ban"></i> Ús Correcte del Lloc Web</h2>
+    <p style="margin-bottom: 1rem; color: var(--gray-600);">
+        L'usuari es compromet a utilitzar el lloc web de conformitat amb la llei i el present 
+        Avís Legal. L'usuari s'obliga a abstenir-se de:
+    </p>
+    <ul style="margin-left: 1.5rem; color: var(--gray-600);">
+        <li>Utilitzar el lloc web amb finalitats il·lícites o contràries a l'ordre públic</li>
+        <li>Provocar danys als sistemes del titular o de tercers</li>
+        <li>Introduir virus o altres elements que puguin alterar els sistemes informàtics</li>
+        <li>Intentar accedir a àrees restringides sense autorització</li>
+        <li>Reproduir, copiar o distribuir continguts sense autorització</li>
+        <li>Suplantar la identitat d'altres usuaris</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-copyright"></i> Propietat Intel·lectual</h2>
+    <p style="margin-bottom: 1rem; color: var(--gray-600);">
+        Tots els continguts del lloc web, incloent textos, imatges, gràfics, disseny, codi font, 
+        logos i programari, són propietat del titular o de tercers que han autoritzat el seu ús, 
+        i estan protegits per les lleis de propietat intel·lectual.
+    </p>
+    <p style="margin-bottom: 1rem; color: var(--gray-600);">
+        Queda prohibida la reproducció, distribució, transformació o comunicació pública 
+        dels continguts sense l'autorització expressa del titular.
+    </p>
+    <p style="color: var(--gray-600);">
+        Les dades estadístiques mostrades provenen de registres públics de partits de voleibol 
+        i es mostren amb finalitats informatives i d'anàlisi esportiva.
+    </p>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-database"></i> Protecció de Dades</h2>
+    <p style="margin-bottom: 1rem; color: var(--gray-600);">
+        El tractament de dades personals es realitza d'acord amb el Reglament General de 
+        Protecció de Dades (RGPD) i la Llei Orgànica 3/2018 de Protecció de Dades Personals.
+    </p>
+    <p style="color: var(--gray-600);">
+        Per a més informació, consulteu la nostra 
+        <a href="{{ url_for('privacitat') }}" style="color: var(--primary);">Política de Privacitat</a>.
+    </p>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-exclamation-triangle"></i> Exclusió de Responsabilitat</h2>
+    <p style="margin-bottom: 1rem; color: var(--gray-600);">
+        El titular no es fa responsable de:
+    </p>
+    <ul style="margin-left: 1.5rem; color: var(--gray-600); margin-bottom: 1rem;">
+        <li>Errors o omissions en les estadístiques mostrades</li>
+        <li>Interrupcions temporals del servei per manteniment o causes tècniques</li>
+        <li>Danys derivats de l'ús inadequat del lloc web per part dels usuaris</li>
+        <li>Continguts de llocs web de tercers als quals es pugui accedir mitjançant enllaços</li>
+        <li>Decisions preses basant-se en les dades mostrades a la plataforma</li>
+    </ul>
+    <p style="color: var(--gray-600);">
+        Les estadístiques es proporcionen amb finalitats informatives i no constitueixen 
+        cap garantia de precisió absoluta.
+    </p>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-link"></i> Enllaços</h2>
+    <p style="margin-bottom: 1rem; color: var(--gray-600);">
+        El lloc web pot contenir enllaços a pàgines externes. El titular no es fa responsable 
+        del contingut, exactitud o funcionament d'aquests llocs web de tercers.
+    </p>
+    <p style="color: var(--gray-600);">
+        La inclusió d'enllaços no implica cap relació, aprovació o supervisió del titular 
+        sobre el contingut dels llocs enllaçats.
+    </p>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-sync-alt"></i> Modificacions</h2>
+    <p style="color: var(--gray-600);">
+        El titular es reserva el dret de modificar aquest Avís Legal en qualsevol moment. 
+        Les modificacions entraran en vigor des del moment de la seva publicació al lloc web. 
+        Es recomana als usuaris revisar periòdicament aquest document.
+    </p>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-balance-scale"></i> Llei Aplicable i Jurisdicció</h2>
+    <p style="color: var(--gray-600);">
+        Les relacions entre el titular i l'usuari es regiran per la legislació espanyola vigent. 
+        Qualsevol controvèrsia se sotmetrà als jutjats i tribunals de la ciutat de Girona, 
+        llevat que la llei disposi una altra cosa.
+    </p>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-envelope"></i> Contacte</h2>
+    <p style="color: var(--gray-600);">
+        Per a qualsevol consulta relacionada amb aquest Avís Legal, podeu contactar-nos a:
+    </p>
+    <ul style="margin-left: 1.5rem; color: var(--gray-600); margin-top: 1rem;">
+        <li><strong>Email:</strong> <a href="mailto:voleibolstats@gmail.com" style="color: var(--primary);">voleibolstats@gmail.com</a></li>
+        <li><strong>Formulari:</strong> <a href="{{ url_for('contacte') }}" style="color: var(--primary);">Pàgina de contacte</a></li>
+    </ul>
+</div>
+{% endblock %}

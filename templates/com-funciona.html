@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+
+{% block title %}Com Funciona - Voleibol Stats{% endblock %}
+
+{% block hero %}
+<section class="hero" style="padding: 2.5rem 0;">
+    <div class="container">
+        <div class="hero-content">
+            <h1 style="font-size: 2.25rem;"><i class="fas fa-book-open"></i> Com Funciona</h1>
+            <p style="font-size: 1rem;">Guia per treure el màxim profit de Voleibol Stats</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-play-circle"></i> Introducció</h2>
+    <p style="margin-bottom: 1rem; color: var(--gray-600);">
+        Voleibol Stats és una plataforma completa d'estadístiques de voleibol que et permet 
+        seguir el rendiment del teu equip, analitzar partits i descobrir tendències. 
+        Aquesta guia t'ajudarà a entendre com utilitzar totes les funcionalitats.
+    </p>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-globe"></i> Accés Públic vs Privat</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, var(--gray-50), var(--white)); border-radius: 12px; border: 2px solid var(--gray-200);">
+            <h4 style="color: var(--primary); margin-bottom: 1rem;">
+                <i class="fas fa-unlock"></i> Accés Públic (Sense registre)
+            </h4>
+            <ul style="color: var(--gray-600); margin-left: 1rem; font-size: 0.95rem;">
+                <li style="margin-bottom: 0.5rem;">Veure resultats de partits</li>
+                <li style="margin-bottom: 0.5rem;">Consultar classificacions d'equips</li>
+                <li style="margin-bottom: 0.5rem;">Veure top anotadors</li>
+                <li style="margin-bottom: 0.5rem;">Consultar plantilles d'equips</li>
+                <li>Historial bàsic de partits</li>
+            </ul>
+        </div>
+        
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, #fef3c7, #fffbeb); border-radius: 12px; border: 2px solid var(--accent);">
+            <h4 style="color: var(--primary); margin-bottom: 1rem;">
+                <i class="fas fa-lock"></i> Accés Privat (Amb registre)
+            </h4>
+            <ul style="color: var(--gray-600); margin-left: 1rem; font-size: 0.95rem;">
+                <li style="margin-bottom: 0.5rem;">Estadístiques detallades per acció</li>
+                <li style="margin-bottom: 0.5rem;">Anàlisi individual de jugadors</li>
+                <li style="margin-bottom: 0.5rem;">Distribució del col·locador</li>
+                <li style="margin-bottom: 0.5rem;">Anàlisi per rotació</li>
+                <li style="margin-bottom: 0.5rem;">Side-out i contraatac</li>
+                <li style="margin-bottom: 0.5rem;">Gràfics i tendències</li>
+                <li>Comparatives entre partits</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-search"></i> Navegar per la Web Pública</h2>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h4 style="color: var(--gray-700); margin-bottom: 0.75rem;">
+            <span style="background: var(--primary); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.85rem; margin-right: 0.5rem;">1</span>
+            Pàgina d'Inici
+        </h4>
+        <p style="color: var(--gray-600); margin-left: 2rem;">
+            A la pàgina principal trobaràs els últims resultats de tots els equips i una llista 
+            d'equips disponibles. Fes clic a qualsevol equip per veure les seves estadístiques.
+        </p>
+    </div>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h4 style="color: var(--gray-700); margin-bottom: 0.75rem;">
+            <span style="background: var(--primary); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.85rem; margin-right: 0.5rem;">2</span>
+            Pàgina d'Equip
+        </h4>
+        <p style="color: var(--gray-600); margin-left: 2rem;">
+            Cada equip té la seva pròpia pàgina amb: estadístiques generals (partits, victòries, derrotes), 
+            top 5 anotadors, plantilla de jugadors i historial de partits.
+        </p>
+    </div>
+    
+    <div>
+        <h4 style="color: var(--gray-700); margin-bottom: 0.75rem;">
+            <span style="background: var(--primary); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.85rem; margin-right: 0.5rem;">3</span>
+            Pàgina de Resultats
+        </h4>
+        <p style="color: var(--gray-600); margin-left: 2rem;">
+            Aquí pots veure tots els resultats de tots els equips. Utilitza els filtres per 
+            buscar per equip o per tipus de resultat (victòries/derrotes).
+        </p>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-chart-line"></i> Funcionalitats Avançades (Usuaris Registrats)</h2>
+    
+    <div style="margin-bottom: 1.5rem; padding: 1rem; background: var(--gray-50); border-radius: 8px;">
+        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">
+            <i class="fas fa-table"></i> Estadístiques per Acció
+        </h4>
+        <p style="color: var(--gray-600); font-size: 0.95rem;">
+            Analitza el rendiment en cada tipus d'acció: atac, recepció, saque, bloqueig i defensa. 
+            Veuràs el total d'accions, punts (#), positives (+), neutres (!), negatives (-) i errors (=), 
+            amb eficàcia i eficiència calculades automàticament.
+        </p>
+    </div>
+    
+    <div style="margin-bottom: 1.5rem; padding: 1rem; background: var(--gray-50); border-radius: 8px;">
+        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">
+            <i class="fas fa-user"></i> Perfil de Jugador
+        </h4>
+        <p style="color: var(--gray-600); font-size: 0.95rem;">
+            Cada jugador té un perfil complet amb les seves estadístiques individuals, 
+            evolució al llarg de la temporada, comparativa amb la mitjana de l'equip, 
+            i anàlisi d'eficàcia segons el tipus de col·locació rebuda.
+        </p>
+    </div>
+    
+    <div style="margin-bottom: 1.5rem; padding: 1rem; background: var(--gray-50); border-radius: 8px;">
+        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">
+            <i class="fas fa-sync-alt"></i> Distribució del Col·locador
+        </h4>
+        <p style="color: var(--gray-600); font-size: 0.95rem;">
+            Visualitza on distribueix la pilota el col·locador amb un mapa de calor del camp. 
+            Veuràs el percentatge d'atacs a cada zona i l'eficàcia d'atac corresponent.
+        </p>
+    </div>
+    
+    <div style="margin-bottom: 1.5rem; padding: 1rem; background: var(--gray-50); border-radius: 8px;">
+        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">
+            <i class="fas fa-redo"></i> Anàlisi per Rotació
+        </h4>
+        <p style="color: var(--gray-600); font-size: 0.95rem;">
+            Descobreix en quines rotacions l'equip rendeix millor. Analitza la distribució 
+            del col·locador i l'eficàcia d'atac en cadascuna de les 6 rotacions.
+        </p>
+    </div>
+    
+    <div style="padding: 1rem; background: var(--gray-50); border-radius: 8px;">
+        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">
+            <i class="fas fa-exchange-alt"></i> Side-out i Contraatac
+        </h4>
+        <p style="color: var(--gray-600); font-size: 0.95rem;">
+            Analitza el rendiment de l'equip en recepció (side-out) versus en defensa (contraatac). 
+            Aquestes mètriques són clau per entendre els punts forts i febles de l'equip.
+        </p>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-calculator"></i> Entendre les Estadístiques</h2>
+    
+    <h4 style="color: var(--gray-700); margin: 1rem 0 0.75rem;">Sistema de Marcatge</h4>
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+        <tr style="background: var(--primary); color: white;">
+            <th style="padding: 0.75rem; text-align: left;">Marca</th>
+            <th style="padding: 0.75rem; text-align: left;">Significat</th>
+            <th style="padding: 0.75rem; text-align: left;">Exemple</th>
+        </tr>
+        <tr style="background: var(--gray-50);">
+            <td style="padding: 0.75rem; font-weight: bold; color: var(--success);">#</td>
+            <td style="padding: 0.75rem;">Punt directe</td>
+            <td style="padding: 0.75rem;">Ace, atac guanyador, bloqueig punt</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.75rem; font-weight: bold; color: #17a2b8;">+</td>
+            <td style="padding: 0.75rem;">Acció positiva</td>
+            <td style="padding: 0.75rem;">Recepció bona, atac que força defensa difícil</td>
+        </tr>
+        <tr style="background: var(--gray-50);">
+            <td style="padding: 0.75rem; font-weight: bold; color: var(--warning);">!</td>
+            <td style="padding: 0.75rem;">Acció neutra</td>
+            <td style="padding: 0.75rem;">Recepció acceptable, saque sense efecte</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.75rem; font-weight: bold; color: #fd7e14;">-</td>
+            <td style="padding: 0.75rem;">Acció negativa</td>
+            <td style="padding: 0.75rem;">Recepció dolenta, atac fàcil de defensar</td>
+        </tr>
+        <tr style="background: var(--gray-50);">
+            <td style="padding: 0.75rem; font-weight: bold; color: #6c757d;">/</td>
+            <td style="padding: 0.75rem;">Error forçat</td>
+            <td style="padding: 0.75rem;">Bloqueig tocat però no punt</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.75rem; font-weight: bold; color: var(--danger);">=</td>
+            <td style="padding: 0.75rem;">Error directe</td>
+            <td style="padding: 0.75rem;">Saque a la xarxa, atac fora</td>
+        </tr>
+    </table>
+    
+    <h4 style="color: var(--gray-700); margin: 1.5rem 0 0.75rem;">Fórmules</h4>
+    <div style="background: var(--gray-50); padding: 1rem; border-radius: 8px;">
+        <p style="margin-bottom: 0.5rem; color: var(--gray-700);">
+            <strong>Eficàcia (%):</strong> Punts (#) ÷ Total d'accions × 100
+        </p>
+        <p style="color: var(--gray-700);">
+            <strong>Eficiència (%):</strong> (Punts (#) - Errors (=)) ÷ Total d'accions × 100
+        </p>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="card-title"><i class="fas fa-lightbulb"></i> Consells d'Ús</h2>
+    <ul style="margin-left: 1.5rem; color: var(--gray-600);">
+        <li style="margin-bottom: 0.75rem;">
+            <strong>Compara partits:</strong> Selecciona múltiples partits per veure mitjanes i identificar tendències.
+        </li>
+        <li style="margin-bottom: 0.75rem;">
+            <strong>Filtra per fase:</strong> Analitza el rendiment en lliga regular vs playoffs per separat.
+        </li>
+        <li style="margin-bottom: 0.75rem;">
+            <strong>Revisa les rotacions:</strong> Identifica quines rotacions necessiten més treball a l'entrenament.
+        </li>
+        <li style="margin-bottom: 0.75rem;">
+            <strong>Segueix l'evolució:</strong> Compara les estadístiques al llarg de la temporada per veure el progrés.
+        </li>
+        <li>
+            <strong>Utilitza el valor del jugador:</strong> La mètrica de valor (punts - errors) és útil per avaluar 
+            l'impacte real d'un jugador.
+        </li>
+    </ul>
+</div>
+
+<!-- CTA Section -->
+<div class="cta-section">
+    <h3><i class="fas fa-rocket"></i> Preparat per començar?</h3>
+    <p>Accedeix a totes les funcionalitats avançades iniciant sessió.</p>
+    <a href="{{ url_for('login') }}" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.85rem 2rem;">
+        <i class="fas fa-sign-in-alt"></i> Iniciar sessió
+    </a>
+</div>
+{% endblock %}
