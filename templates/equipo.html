@@ -70,7 +70,7 @@
         {% if stats.partidos and stats.partidos > 0 %}
         <div class="stat-card">
             <div class="stat-value" style="color: var(--warning);">{{ ((stats.victorias or 0) / stats.partidos * 100)|round(1) }}%</div>
-            <div class="stat-label">{{ _('% Victòries') }}</div>
+            <div class="stat-label">% {{ _('Victòries') }}</div>
         </div>
         {% endif %}
     </div>
