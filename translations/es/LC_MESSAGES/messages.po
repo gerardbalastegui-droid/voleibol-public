@@ -25,6 +25,12 @@ msgstr "Actualizado en tiempo real"
 msgid "Estadístiques de voleibol en temps real - Voleibol Girona"
 msgstr "Estadísticas de voleibol en tiempo real - Voleibol Girona"
 
+msgid "Canviar equip"
+msgstr "Cambiar equipo"
+
+msgid "Últims 5 partits"
+msgstr "Últimos 5 partidos"
+
 # Navigation
 msgid "Inici"
 msgstr "Inicio"
