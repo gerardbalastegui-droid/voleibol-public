@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Resultats - Voleibol Stats{% endblock %}
+{% block title %}{{ _('Resultats') }} - Voleibol Stats{% endblock %}
 
 {% block hero %}
 <section class="hero" style="padding: 2.5rem 0;">
     <div class="container">
         <div class="hero-content">
-            <h1 style="font-size: 2.25rem;"><i class="fas fa-list-ol"></i> Resultats</h1>
-            <p style="font-size: 1rem;">Tots els resultats dels equips de Voleibol Girona</p>
+            <h1 style="font-size: 2.25rem;"><i class="fas fa-list-ol"></i> {{ _('Resultats') }}</h1>
+            <p style="font-size: 1rem;">{{ _('Tots els resultats dels equips de Voleibol Girona') }}</p>
         </div>
     </div>
 </section>
@@ -30,11 +30,11 @@
     <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
         <div style="display: flex; align-items: center; gap: 0.75rem;">
             <label style="font-weight: 600; color: var(--gray-600);">
-                <i class="fas fa-filter"></i> Filtrar per equip:
+                <i class="fas fa-filter"></i> {{ _('Filtrar per equip') }}:
             </label>
             <select id="equipo-filter" onchange="filterResults()" 
                     style="padding: 0.5rem 1rem; border-radius: 8px; border: 2px solid var(--gray-200); min-width: 180px;">
-                <option value="">Tots els equips</option>
+                <option value="">{{ _('Tots els equips') }}</option>
                 {% for e in equipos %}
                 <option value="{{ e.nombre_completo }}">{{ e.nombre_completo }}</option>
                 {% endfor %}
@@ -42,13 +42,13 @@
         </div>
         <div style="display: flex; align-items: center; gap: 0.75rem;">
             <label style="font-weight: 600; color: var(--gray-600);">
-                <i class="fas fa-trophy"></i> Resultat:
+                <i class="fas fa-trophy"></i> {{ _('Resultat') }}:
             </label>
             <select id="resultado-filter" onchange="filterResults()" 
                     style="padding: 0.5rem 1rem; border-radius: 8px; border: 2px solid var(--gray-200);">
-                <option value="">Tots</option>
-                <option value="victoria">Victòries</option>
-                <option value="derrota">Derrotes</option>
+                <option value="">{{ _('Tots') }}</option>
+                <option value="victoria">{{ _('Victòries') }}</option>
+                <option value="derrota">{{ _('Derrotes') }}</option>
             </select>
         </div>
     </div>
@@ -57,9 +57,9 @@
 <!-- Tabla de Resultados -->
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title"><i class="fas fa-calendar-check"></i> Últims Partits</h2>
+        <h2 class="card-title"><i class="fas fa-calendar-check"></i> {{ _('Últims Partits') }}</h2>
         <span id="results-count" style="background: var(--primary); color: white; padding: 0.35rem 0.85rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;">
-            {{ resultados|length }} partits
+            {{ resultados|length }} {{ _('partits') }}
         </span>
     </div>
     
@@ -67,11 +67,11 @@
         <table id="results-table">
             <thead>
                 <tr>
-                    <th>Data</th>
-                    <th>Equip</th>
-                    <th>Rival</th>
-                    <th>Lloc</th>
-                    <th style="text-align: center;">Resultat</th>
+                    <th>{{ _('Data') }}</th>
+                    <th>{{ _('Equip') }}</th>
+                    <th>{{ _('Rival') }}</th>
+                    <th>{{ _('Lloc') }}</th>
+                    <th style="text-align: center;">{{ _('Resultat') }}</th>
                     <th></th>
                 </tr>
             </thead>
@@ -86,7 +86,7 @@
                         <strong>{{ partido.equipo }}</strong>
                     </td>
                     <td>{{ partido.rival }}</td>
-                    <td>{{ 'Casa' if partido.local else 'Fora' }}</td>
+                    <td>{{ _('Casa') if partido.local else _('Fora') }}</td>
                     <td style="text-align: center;">
                         <span style="font-size: 1.1rem; font-weight: 700; {% if partido.resultado_tipo == 'victoria' %}color: var(--success);{% else %}color: var(--danger);{% endif %}">
                             {{ partido.resultado }}
@@ -108,7 +108,7 @@
     <!-- Empty state -->
     <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: var(--gray-500);">
         <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; color: var(--gray-300);"></i>
-        <p style="font-size: 1.1rem;">No s'han trobat resultats amb els filtres seleccionats.</p>
+        <p style="font-size: 1.1rem;">{{ _("No s'han trobat resultats amb els filtres seleccionats.") }}</p>
     </div>
 </div>
 
@@ -126,7 +126,7 @@
 <!-- Resumen por equipo -->
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title"><i class="fas fa-chart-bar"></i> Resum per Equip</h2>
+        <h2 class="card-title"><i class="fas fa-chart-bar"></i> {{ _('Resum per Equip') }}</h2>
     </div>
     
     <div class="teams-grid">
@@ -141,10 +141,10 @@
 
 <!-- CTA Section -->
 <div class="cta-section">
-    <h3><i class="fas fa-chart-line"></i> Vols analitzar els partits en detall?</h3>
-    <p>Inicia sessió per veure estadístiques completes de cada partit: accions, jugadors, distribució i molt més!</p>
+    <h3><i class="fas fa-chart-line"></i> {{ _('Vols analitzar els partits en detall?') }}</h3>
+    <p>{{ _("Inicia sessió per veure estadístiques completes de cada partit: accions, jugadors, distribució i molt més!") }}</p>
     <a href="{{ url_for('login') }}" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.85rem 2rem;">
-        <i class="fas fa-sign-in-alt"></i> Iniciar sessió
+        <i class="fas fa-sign-in-alt"></i> {{ _('Iniciar sessió') }}
     </a>
 </div>
 
@@ -171,7 +171,7 @@ function filterResults() {
     });
     
     // Update count
-    document.getElementById('results-count').textContent = visibleCount + ' partits';
+    document.getElementById('results-count').textContent = visibleCount + ' {{ _("partits") }}';
     
     // Show/hide empty state
     document.getElementById('no-results').style.display = visibleCount === 0 ? 'block' : 'none';
