@@ -260,6 +260,21 @@ def privacitat():
     """Política de privacitat"""
     return render_template('privacitat.html')
 
+@app.route('/avis-legal')
+def avis_legal():
+    """Avís Legal"""
+    return render_template('avis-legal.html')
+
+@app.route('/cookies')
+def cookies():
+    """Política de Cookies"""
+    return render_template('cookies.html')
+
+@app.route('/com-funciona')
+def com_funciona():
+    """Com Funciona"""
+    return render_template('com-funciona.html')
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
