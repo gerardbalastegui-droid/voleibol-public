@@ -7,7 +7,7 @@
     <div class="container">
         <div class="hero-content">
             <h1 style="font-size: 2.25rem;"><i class="fas fa-volleyball-ball"></i> {{ equipo.nombre_completo }}</h1>
-            <p style="font-size: 1rem;">Estadístiques i resultats de l'equip</p>
+            <p style="font-size: 1rem;">{{ _("Estadístiques i resultats de l'equip") }}</p>
         </div>
     </div>
 </section>
@@ -18,7 +18,7 @@
 <div class="card" style="padding: 1rem 1.5rem;">
     <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
         <label for="equipo-select" style="font-weight: 600; color: var(--gray-600);">
-            <i class="fas fa-exchange-alt"></i> Canviar equip:
+            <i class="fas fa-exchange-alt"></i> {{ _('Canviar equip:') }}
         </label>
         <select id="equipo-select" onchange="window.location.href='/equip/' + this.value" 
                 style="padding: 0.6rem 1rem; border-radius: 8px; border: 2px solid var(--gray-200); font-size: 1rem; min-width: 200px; cursor: pointer;">
@@ -44,9 +44,9 @@
 <!-- Estadísticas generales -->
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title"><i class="fas fa-chart-bar"></i> Estadístiques Generals</h2>
+        <h2 class="card-title"><i class="fas fa-chart-bar"></i> {{ _('Estadístiques Generals') }}</h2>
         {% if stats.racha %}
-        <div class="racha" title="Últims 5 partits">
+        <div class="racha" title="{{ _('Últims 5 partits') }}">
             {% for r in stats.racha %}
             <span class="racha-item {{ r }}">{{ r }}</span>
             {% endfor %}
@@ -57,20 +57,20 @@
     <div class="stats-grid">
         <div class="stat-card">
             <div class="stat-value">{{ stats.partidos or 0 }}</div>
-            <div class="stat-label">Partits</div>
+            <div class="stat-label">{{ _('Partits') }}</div>
         </div>
         <div class="stat-card">
             <div class="stat-value success">{{ stats.victorias or 0 }}</div>
-            <div class="stat-label">Victòries</div>
+            <div class="stat-label">{{ _('Victòries') }}</div>
         </div>
         <div class="stat-card">
             <div class="stat-value danger">{{ stats.derrotas or 0 }}</div>
-            <div class="stat-label">Derrotes</div>
+            <div class="stat-label">{{ _('Derrotes') }}</div>
         </div>
         {% if stats.partidos and stats.partidos > 0 %}
         <div class="stat-card">
             <div class="stat-value" style="color: var(--warning);">{{ ((stats.victorias or 0) / stats.partidos * 100)|round(1) }}%</div>
-            <div class="stat-label">% Victòries</div>
+            <div class="stat-label">{{ _('% Victòries') }}</div>
         </div>
         {% endif %}
     </div>
@@ -82,7 +82,7 @@
     {% if top_anotadores %}
     <div class="card">
         <div class="card-header">
-            <h2 class="card-title"><i class="fas fa-trophy"></i> Top 5 Anotadors</h2>
+            <h2 class="card-title"><i class="fas fa-trophy"></i> {{ _('Top 5 Anotadors') }}</h2>
         </div>
         <div class="podium">
             {% for jugador in top_anotadores %}
@@ -106,9 +106,9 @@
     {% if jugadores %}
     <div class="card">
         <div class="card-header">
-            <h2 class="card-title"><i class="fas fa-users"></i> Plantilla</h2>
+            <h2 class="card-title"><i class="fas fa-users"></i> {{ _('Plantilla') }}</h2>
             <span style="background: var(--gray-100); padding: 0.35rem 0.75rem; border-radius: 50px; font-size: 0.85rem; color: var(--gray-600);">
-                {{ jugadores|length }} jugadors
+                {{ jugadores|length }} {{ _('jugadors') }}
             </span>
         </div>
         <div class="table-container" style="max-height: 350px; overflow-y: auto;">
@@ -116,8 +116,8 @@
                 <thead>
                     <tr>
                         <th style="width: 60px;">#</th>
-                        <th>Jugador</th>
-                        <th>Posició</th>
+                        <th>{{ _('Jugador') }}</th>
+                        <th>{{ _('Posició') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -150,9 +150,9 @@
 {% if partidos %}
 <div class="card">
     <div class="card-header">
-        <h2 class="card-title"><i class="fas fa-calendar-alt"></i> Historial de Partits</h2>
+        <h2 class="card-title"><i class="fas fa-calendar-alt"></i> {{ _('Historial de Partits') }}</h2>
         <span style="background: var(--gray-100); padding: 0.35rem 0.75rem; border-radius: 50px; font-size: 0.85rem; color: var(--gray-600);">
-            {{ partidos|length }} partits
+            {{ partidos|length }} {{ _('partits') }}
         </span>
     </div>
     
@@ -160,10 +160,10 @@
         <table>
             <thead>
                 <tr>
-                    <th>Data</th>
-                    <th>Rival</th>
-                    <th>Lloc</th>
-                    <th>Resultat</th>
+                    <th>{{ _('Data') }}</th>
+                    <th>{{ _('Rival') }}</th>
+                    <th>{{ _('Lloc') }}</th>
+                    <th>{{ _('Resultat') }}</th>
                     <th></th>
                 </tr>
             </thead>
@@ -172,7 +172,7 @@
                 <tr>
                     <td>{{ partido.fecha }}</td>
                     <td><strong>{{ partido.rival }}</strong></td>
-                    <td>{{ 'Casa' if partido.local else 'Fora' }}</td>
+                    <td>{{ _('Casa') if partido.local else _('Fora') }}</td>
                     <td>
                         <span style="font-size: 1.1rem; font-weight: 700; {% if partido.resultado_tipo == 'victoria' %}color: var(--success);{% else %}color: var(--danger);{% endif %}">
                             {{ partido.resultado if partido.resultado else '-' }}
@@ -197,10 +197,10 @@
 
 <!-- CTA Section -->
 <div class="cta-section">
-    <h3><i class="fas fa-chart-pie"></i> Vols veure l'anàlisi complet?</h3>
-    <p>Inicia sessió per accedir a estadístiques avançades: distribució del col·locador, side-out, contraatac, anàlisi per rotació, tendències i molt més!</p>
+    <h3><i class="fas fa-chart-pie"></i> {{ _("Vols veure l'anàlisi complet?") }}</h3>
+    <p>{{ _("Inicia sessió per accedir a estadístiques avançades: distribució del col·locador, side-out, contraatac, anàlisi per rotació, tendències i molt més!") }}</p>
     <a href="{{ url_for('login') }}" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.85rem 2rem;">
-        <i class="fas fa-sign-in-alt"></i> Iniciar sessió
+        <i class="fas fa-sign-in-alt"></i> {{ _('Iniciar sessió') }}
     </a>
 </div>
 {% endblock %}
