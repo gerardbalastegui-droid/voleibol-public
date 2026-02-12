@@ -25,6 +25,66 @@ msgstr "Actualizado en tiempo real"
 msgid "Estadístiques de voleibol en temps real - Voleibol Girona"
 msgstr "Estadísticas de voleibol en tiempo real - Voleibol Girona"
 
+msgid "Posa't en contacte amb nosaltres"
+msgstr "Ponte en contacto con nosotros"
+
+msgid "Escriu-nos"
+msgstr "Escríbenos"
+
+msgid "Si tens preguntes, suggeriments o vols informació sobre com utilitzar Voleibol Stats per al teu equip, no dubtis en contactar-nos."
+msgstr "Si tienes preguntas, sugerencias o quieres información sobre cómo utilizar Voleibol Stats para tu equipo, no dudes en contactarnos."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Temps de resposta"
+msgstr "Tiempo de respuesta"
+
+msgid "Normalment responem en menys de 24-48 hores."
+msgstr "Normalmente respondemos en menos de 24-48 horas."
+
+msgid "Preguntes Freqüents"
+msgstr "Preguntas Frecuentes"
+
+msgid "Com puc utilitzar Voleibol Stats per al meu equip?"
+msgstr "¿Cómo puedo utilizar Voleibol Stats para mi equipo?"
+
+msgid "Actualment Voleibol Stats està disponible per als equips de Voleibol Girona. Si estàs interessat en utilitzar-lo per al teu club, contacta'ns i estudiarem la possibilitat."
+msgstr "Actualmente Voleibol Stats está disponible para los equipos de Voleibol Girona. Si estás interesado en utilizarlo para tu club, contáctanos y estudiaremos la posibilidad."
+
+msgid "Les estadístiques són en temps real?"
+msgstr "¿Las estadísticas son en tiempo real?"
+
+msgid "Les estadístiques s'actualitzen després de cada partit, normalment en les 24 hores posteriors a la finalització del partit."
+msgstr "Las estadísticas se actualizan después de cada partido, normalmente en las 24 horas posteriores a la finalización del partido."
+
+msgid "Puc accedir a estadístiques de temporades anteriors?"
+msgstr "¿Puedo acceder a estadísticas de temporadas anteriores?"
+
+msgid "Sí, la plataforma guarda l'historial de totes les temporades. Els usuaris registrats poden accedir a dades històriques des del panell d'administració."
+msgstr "Sí, la plataforma guarda el historial de todas las temporadas. Los usuarios registrados pueden acceder a datos históricos desde el panel de administración."
+
+msgid "Com es recullen les dades dels partits?"
+msgstr "¿Cómo se recogen los datos de los partidos?"
+
+msgid "Les dades es recullen manualment durant els partits utilitzant aplicacions especialitzades d'estadístiques de voleibol, i després s'importen a la nostra plataforma."
+msgstr "Los datos se recogen manualmente durante los partidos utilizando aplicaciones especializadas de estadísticas de voleibol, y después se importan a nuestra plataforma."
+
+msgid "Suporta el Projecte"
+msgstr "Apoya el Proyecto"
+
+msgid "Voleibol Stats és un projecte independent i sense ànim de lucre. Si t'agrada el que fem i vols ajudar a mantenir el projecte, pots convidar-nos a un cafè!"
+msgstr "Voleibol Stats es un proyecto independiente y sin ánimo de lucro. Si te gusta lo que hacemos y quieres ayudar a mantener el proyecto, ¡puedes invitarnos a un café!"
+
+msgid "Convida'm a un cafè"
+msgstr "Invítame a un café"
+
+msgid "Ja tens compte?"
+msgstr "¿Ya tienes cuenta?"
+
+msgid "Accedeix a la plataforma completa amb totes les funcionalitats d'anàlisi."
+msgstr "Accede a la plataforma completa con todas las funcionalidades de análisis."
+
 msgid "Coneix el projecte Voleibol Stats"
 msgstr "Conoce el proyecto Voleibol Stats"
 
