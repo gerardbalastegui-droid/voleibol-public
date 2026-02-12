@@ -133,20 +133,22 @@
         
         .lang-btn {
             text-decoration: none;
-            opacity: 0.6;
+            opacity: 0.7;
             transition: all 0.3s;
-            padding: 0.25rem;
+            padding: 3px;
             cursor: pointer;
             display: flex;
             align-items: center;
             border-radius: 4px;
+            background: rgba(255,255,255,0.9);
         }
         
         .lang-btn:hover,
         .lang-btn.active {
             opacity: 1;
             transform: scale(1.15);
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
         
         .lang-btn img {
@@ -762,7 +764,7 @@
                             <a href="{{ url_for('set_language', lang='ca') }}" 
                                class="lang-btn {% if current_lang == 'ca' %}active{% endif %}"
                                title="Català">
-                                <img src="https://flagcdn.com/24x18/es-ct.png" alt="Català" width="24" height="18">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Catalonia.svg/24px-Flag_of_Catalonia.svg.png" alt="Català" width="24" height="16">
                             </a>
                             <a href="{{ url_for('set_language', lang='es') }}" 
                                class="lang-btn {% if current_lang == 'es' %}active{% endif %}"
