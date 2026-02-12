@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Contacte - Voleibol Stats{% endblock %}
+{% block title %}{{ _('Contacte') }} - Voleibol Stats{% endblock %}
 
 {% block hero %}
 <section class="hero" style="padding: 2.5rem 0;">
     <div class="container">
         <div class="hero-content">
-            <h1 style="font-size: 2.25rem;"><i class="fas fa-envelope"></i> Contacte</h1>
-            <p style="font-size: 1rem;">Posa't en contacte amb nosaltres</p>
+            <h1 style="font-size: 2.25rem;"><i class="fas fa-envelope"></i> {{ _('Contacte') }}</h1>
+            <p style="font-size: 1rem;">{{ _("Posa't en contacte amb nosaltres") }}</p>
         </div>
     </div>
 </section>
@@ -16,15 +16,14 @@
 {% block content %}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
     <div class="card">
-        <h2 class="card-title"><i class="fas fa-paper-plane"></i> Escriu-nos</h2>
+        <h2 class="card-title"><i class="fas fa-paper-plane"></i> {{ _('Escriu-nos') }}</h2>
         <p style="margin-bottom: 1.5rem; color: var(--gray-600);">
-            Si tens preguntes, suggeriments o vols informació sobre com utilitzar Voleibol Stats 
-            per al teu equip, no dubtis en contactar-nos.
+            {{ _("Si tens preguntes, suggeriments o vols informació sobre com utilitzar Voleibol Stats per al teu equip, no dubtis en contactar-nos.") }}
         </p>
         
         <div style="margin-bottom: 1.5rem;">
             <h4 style="color: var(--gray-700); margin-bottom: 0.5rem;">
-                <i class="fas fa-envelope" style="color: var(--primary);"></i> Email
+                <i class="fas fa-envelope" style="color: var(--primary);"></i> {{ _('Email') }}
             </h4>
             <p style="color: var(--gray-600);">
                 <a href="mailto:voleibolstats@gmail.com" style="color: var(--primary);">voleibolstats@gmail.com</a>
@@ -42,68 +41,63 @@
         
         <div>
             <h4 style="color: var(--gray-700); margin-bottom: 0.5rem;">
-                <i class="fas fa-clock" style="color: var(--primary);"></i> Temps de resposta
+                <i class="fas fa-clock" style="color: var(--primary);"></i> {{ _('Temps de resposta') }}
             </h4>
             <p style="color: var(--gray-600);">
-                Normalment responem en menys de 24-48 hores.
+                {{ _('Normalment responem en menys de 24-48 hores.') }}
             </p>
         </div>
     </div>
     
     <div class="card">
-        <h2 class="card-title"><i class="fas fa-question-circle"></i> Preguntes Freqüents</h2>
+        <h2 class="card-title"><i class="fas fa-question-circle"></i> {{ _('Preguntes Freqüents') }}</h2>
         
         <div style="margin-bottom: 1.5rem;">
-            <h4 style="color: var(--gray-700); margin-bottom: 0.5rem;">Com puc utilitzar Voleibol Stats per al meu equip?</h4>
+            <h4 style="color: var(--gray-700); margin-bottom: 0.5rem;">{{ _('Com puc utilitzar Voleibol Stats per al meu equip?') }}</h4>
             <p style="color: var(--gray-600); font-size: 0.95rem;">
-                Actualment Voleibol Stats està disponible per als equips de Voleibol Girona. 
-                Si estàs interessat en utilitzar-lo per al teu club, contacta'ns i estudiarem la possibilitat.
+                {{ _("Actualment Voleibol Stats està disponible per als equips de Voleibol Girona. Si estàs interessat en utilitzar-lo per al teu club, contacta'ns i estudiarem la possibilitat.") }}
             </p>
         </div>
         
         <div style="margin-bottom: 1.5rem;">
-            <h4 style="color: var(--gray-700); margin-bottom: 0.5rem;">Les estadístiques són en temps real?</h4>
+            <h4 style="color: var(--gray-700); margin-bottom: 0.5rem;">{{ _('Les estadístiques són en temps real?') }}</h4>
             <p style="color: var(--gray-600); font-size: 0.95rem;">
-                Les estadístiques s'actualitzen després de cada partit, normalment en les 24 hores 
-                posteriors a la finalització del partit.
+                {{ _("Les estadístiques s'actualitzen després de cada partit, normalment en les 24 hores posteriors a la finalització del partit.") }}
             </p>
         </div>
         
         <div style="margin-bottom: 1.5rem;">
-            <h4 style="color: var(--gray-700); margin-bottom: 0.5rem;">Puc accedir a estadístiques de temporades anteriors?</h4>
+            <h4 style="color: var(--gray-700); margin-bottom: 0.5rem;">{{ _("Puc accedir a estadístiques de temporades anteriors?") }}</h4>
             <p style="color: var(--gray-600); font-size: 0.95rem;">
-                Sí, la plataforma guarda l'historial de totes les temporades. Els usuaris registrats 
-                poden accedir a dades històriques des del panell d'administració.
+                {{ _("Sí, la plataforma guarda l'historial de totes les temporades. Els usuaris registrats poden accedir a dades històriques des del panell d'administració.") }}
             </p>
         </div>
         
         <div>
-            <h4 style="color: var(--gray-700); margin-bottom: 0.5rem;">Com es recullen les dades dels partits?</h4>
+            <h4 style="color: var(--gray-700); margin-bottom: 0.5rem;">{{ _('Com es recullen les dades dels partits?') }}</h4>
             <p style="color: var(--gray-600); font-size: 0.95rem;">
-                Les dades es recullen manualment durant els partits utilitzant aplicacions especialitzades 
-                d'estadístiques de voleibol, i després s'importen a la nostra plataforma.
+                {{ _("Les dades es recullen manualment durant els partits utilitzant aplicacions especialitzades d'estadístiques de voleibol, i després s'importen a la nostra plataforma.") }}
             </p>
         </div>
     </div>
 </div>
 
 <div class="card">
-    <h2 class="card-title"><i class="fas fa-heart"></i> Suporta el Projecte</h2>
+    <h2 class="card-title"><i class="fas fa-heart"></i> {{ _('Suporta el Projecte') }}</h2>
     <p style="margin-bottom: 1rem; color: var(--gray-600);">
-        Voleibol Stats és un projecte independent i sense ànim de lucre. Si t'agrada el que fem 
-        i vols ajudar a mantenir el projecte, pots convidar-nos a un cafè!
+        {{ _("Voleibol Stats és un projecte independent i sense ànim de lucre. Si t'agrada el que fem i vols ajudar a mantenir el projecte, pots convidar-nos a un cafè!") }}
     </p>
     <a href="https://ko-fi.com/gerardbalastegui" target="_blank" class="btn btn-primary">
-        <i class="fas fa-coffee"></i> Convida'm a un cafè
+        <i class="fas fa-coffee"></i> {{ _("Convida'm a un cafè") }}
     </a>
 </div>
 
 <!-- CTA Section -->
 <div class="cta-section">
-    <h3><i class="fas fa-sign-in-alt"></i> Ja tens compte?</h3>
-    <p>Accedeix a la plataforma completa amb totes les funcionalitats d'anàlisi.</p>
+    <h3><i class="fas fa-sign-in-alt"></i> {{ _('Ja tens compte?') }}</h3>
+    <p>{{ _("Accedeix a la plataforma completa amb totes les funcionalitats d'anàlisi.") }}</p>
     <a href="{{ url_for('login') }}" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.85rem 2rem;">
-        <i class="fas fa-sign-in-alt"></i> Iniciar sessió
+        <i class="fas fa-sign-in-alt"></i> {{ _('Iniciar sessió') }}
     </a>
 </div>
 {% endblock %}
