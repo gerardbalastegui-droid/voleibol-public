@@ -743,7 +743,7 @@
                     </p>
                     <div class="social-links">
                         <a href="https://instagram.com/gerardbalastegui" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://ko-fi.com/TU_USUARIO" target="_blank"><i class="fas fa-coffee"></i></a>
+                        <a href="https://ko-fi.com/gerardbalastegui" target="_blank"><i class="fas fa-coffee"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -751,13 +751,14 @@
                     <a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Inici</a>
                     <a href="{{ url_for('resultados') }}"><i class="fas fa-list"></i> Resultats</a>
                     <a href="{{ url_for('quisom') }}"><i class="fas fa-info-circle"></i> Qui Som</a>
+                    <a href="{{ url_for('com_funciona') }}"><i class="fas fa-book-open"></i> Com Funciona</a>
                     <a href="{{ url_for('contacte') }}"><i class="fas fa-envelope"></i> Contacte</a>
-                    <a href="{{ url_for('privacitat') }}"><i class="fas fa-shield-alt"></i> Privacitat</a>
                 </div>
                 <div class="footer-section">
-                    <h4>Contacte</h4>
-                    <a href="mailto:info@voleibolstats.com"><i class="fas fa-envelope"></i> info@voleibolstats.com</a>
-                    <a href="https://instagram.com/gerardbalastegui" target="_blank"><i class="fab fa-instagram"></i> @gerardbalastegui</a>
+                    <h4>Legal</h4>
+                    <a href="{{ url_for('avis_legal') }}"><i class="fas fa-gavel"></i> Avís Legal</a>
+                    <a href="{{ url_for('privacitat') }}"><i class="fas fa-shield-alt"></i> Privacitat</a>
+                    <a href="{{ url_for('cookies') }}"><i class="fas fa-cookie-bite"></i> Cookies</a>
                 </div>
             </div>
             <div class="footer-bottom">
