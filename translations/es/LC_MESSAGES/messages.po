@@ -531,3 +531,195 @@ msgstr "Información legal del sitio web"
 
 msgid "Última actualització: Febrer 2026"
 msgstr "Última actualización: Febrero 2026"
+
+msgid "Guia per treure el màxim profit de Voleibol Stats"
+msgstr "Guía para sacar el máximo provecho de Voleibol Stats"
+
+msgid "Introducció"
+msgstr "Introducción"
+
+msgid "Voleibol Stats és una plataforma completa d'estadístiques de voleibol que et permet seguir el rendiment del teu equip, analitzar partits i descobrir tendències. Aquesta guia t'ajudarà a entendre com utilitzar totes les funcionalitats."
+msgstr "Voleibol Stats es una plataforma completa de estadísticas de voleibol que te permite seguir el rendimiento de tu equipo, analizar partidos y descubrir tendencias. Esta guía te ayudará a entender cómo utilizar todas las funcionalidades."
+
+msgid "Accés Públic vs Privat"
+msgstr "Acceso Público vs Privado"
+
+msgid "Accés Públic (Sense registre)"
+msgstr "Acceso Público (Sin registro)"
+
+msgid "Veure resultats de partits"
+msgstr "Ver resultados de partidos"
+
+msgid "Consultar classificacions d'equips"
+msgstr "Consultar clasificaciones de equipos"
+
+msgid "Veure top anotadors"
+msgstr "Ver top anotadores"
+
+msgid "Consultar plantilles d'equips"
+msgstr "Consultar plantillas de equipos"
+
+msgid "Historial bàsic de partits"
+msgstr "Historial básico de partidos"
+
+msgid "Accés Privat (Amb registre)"
+msgstr "Acceso Privado (Con registro)"
+
+msgid "Estadístiques detallades per acció"
+msgstr "Estadísticas detalladas por acción"
+
+msgid "Anàlisi individual de jugadors"
+msgstr "Análisis individual de jugadores"
+
+msgid "Anàlisi per rotació"
+msgstr "Análisis por rotación"
+
+msgid "Side-out i contraatac"
+msgstr "Side-out y contraataque"
+
+msgid "Gràfics i tendències"
+msgstr "Gráficos y tendencias"
+
+msgid "Comparatives entre partits"
+msgstr "Comparativas entre partidos"
+
+msgid "Navegar per la Web Pública"
+msgstr "Navegar por la Web Pública"
+
+msgid "Pàgina d'Inici"
+msgstr "Página de Inicio"
+
+msgid "A la pàgina principal trobaràs els últims resultats de tots els equips i una llista d'equips disponibles. Fes clic a qualsevol equip per veure les seves estadístiques."
+msgstr "En la página principal encontrarás los últimos resultados de todos los equipos y una lista de equipos disponibles. Haz clic en cualquier equipo para ver sus estadísticas."
+
+msgid "Pàgina d'Equip"
+msgstr "Página de Equipo"
+
+msgid "Cada equip té la seva pròpia pàgina amb: estadístiques generals (partits, victòries, derrotes), top 5 anotadors, plantilla de jugadors i historial de partits."
+msgstr "Cada equipo tiene su propia página con: estadísticas generales (partidos, victorias, derrotas), top 5 anotadores, plantilla de jugadores e historial de partidos."
+
+msgid "Pàgina de Resultats"
+msgstr "Página de Resultados"
+
+msgid "Aquí pots veure tots els resultats de tots els equips. Utilitza els filtres per buscar per equip o per tipus de resultat (victòries/derrotes)."
+msgstr "Aquí puedes ver todos los resultados de todos los equipos. Utiliza los filtros para buscar por equipo o por tipo de resultado (victorias/derrotas)."
+
+msgid "Funcionalitats Avançades (Usuaris Registrats)"
+msgstr "Funcionalidades Avanzadas (Usuarios Registrados)"
+
+msgid "Estadístiques per Acció"
+msgstr "Estadísticas por Acción"
+
+msgid "Analitza el rendiment en cada tipus d'acció: atac, recepció, saque, bloqueig i defensa. Veuràs el total d'accions, punts (#), positives (+), neutres (!), negatives (-) i errors (=), amb eficàcia i eficiència calculades automàticament."
+msgstr "Analiza el rendimiento en cada tipo de acción: ataque, recepción, saque, bloqueo y defensa. Verás el total de acciones, puntos (#), positivas (+), neutras (!), negativas (-) y errores (=), con eficacia y eficiencia calculadas automáticamente."
+
+msgid "Perfil de Jugador"
+msgstr "Perfil de Jugador"
+
+msgid "Cada jugador té un perfil complet amb les seves estadístiques individuals, evolució al llarg de la temporada, comparativa amb la mitjana de l'equip, i anàlisi d'eficàcia segons el tipus de col·locació rebuda."
+msgstr "Cada jugador tiene un perfil completo con sus estadísticas individuales, evolución a lo largo de la temporada, comparativa con la media del equipo, y análisis de eficacia según el tipo de colocación recibida."
+
+msgid "Distribució del Col·locador"
+msgstr "Distribución del Colocador"
+
+msgid "Visualitza on distribueix la pilota el col·locador amb un mapa de calor del camp. Veuràs el percentatge d'atacs a cada zona i l'eficàcia d'atac corresponent."
+msgstr "Visualiza dónde distribuye el balón el colocador con un mapa de calor del campo. Verás el porcentaje de ataques a cada zona y la eficacia de ataque correspondiente."
+
+msgid "Descobreix en quines rotacions l'equip rendeix millor. Analitza la distribució del col·locador i l'eficàcia d'atac en cadascuna de les 6 rotacions."
+msgstr "Descubre en qué rotaciones el equipo rinde mejor. Analiza la distribución del colocador y la eficacia de ataque en cada una de las 6 rotaciones."
+
+msgid "Side-out i Contraatac"
+msgstr "Side-out y Contraataque"
+
+msgid "Analitza el rendiment de l'equip en recepció (side-out) versus en defensa (contraatac). Aquestes mètriques són clau per entendre els punts forts i febles de l'equip."
+msgstr "Analiza el rendimiento del equipo en recepción (side-out) versus en defensa (contraataque). Estas métricas son clave para entender los puntos fuertes y débiles del equipo."
+
+msgid "Entendre les Estadístiques"
+msgstr "Entender las Estadísticas"
+
+msgid "Sistema de Marcatge"
+msgstr "Sistema de Marcaje"
+
+msgid "Marca"
+msgstr "Marca"
+
+msgid "Significat"
+msgstr "Significado"
+
+msgid "Exemple"
+msgstr "Ejemplo"
+
+msgid "Punt directe"
+msgstr "Punto directo"
+
+msgid "Ace, atac guanyador, bloqueig punt"
+msgstr "Ace, ataque ganador, bloqueo punto"
+
+msgid "Acció positiva"
+msgstr "Acción positiva"
+
+msgid "Recepció bona, atac que força defensa difícil"
+msgstr "Recepción buena, ataque que fuerza defensa difícil"
+
+msgid "Acció neutra"
+msgstr "Acción neutra"
+
+msgid "Recepció acceptable, saque sense efecte"
+msgstr "Recepción aceptable, saque sin efecto"
+
+msgid "Acció negativa"
+msgstr "Acción negativa"
+
+msgid "Recepció dolenta, atac fàcil de defensar"
+msgstr "Recepción mala, ataque fácil de defender"
+
+msgid "Error forçat"
+msgstr "Error forzado"
+
+msgid "Bloqueig tocat però no punt"
+msgstr "Bloqueo tocado pero no punto"
+
+msgid "Error directe"
+msgstr "Error directo"
+
+msgid "Saque a la xarxa, atac fora"
+msgstr "Saque a la red, ataque fuera"
+
+msgid "Fórmules"
+msgstr "Fórmulas"
+
+msgid "Eficàcia"
+msgstr "Eficacia"
+
+msgid "Eficiència"
+msgstr "Eficiencia"
+
+msgid "Punts (#) ÷ Total d'accions × 100"
+msgstr "Puntos (#) ÷ Total de acciones × 100"
+
+msgid "(Punts (#) - Errors (=)) ÷ Total d'accions × 100"
+msgstr "(Puntos (#) - Errores (=)) ÷ Total de acciones × 100"
+
+msgid "Consells d'Ús"
+msgstr "Consejos de Uso"
+
+msgid "<strong>Compara partits:</strong> Selecciona múltiples partits per veure mitjanes i identificar tendències."
+msgstr "<strong>Compara partidos:</strong> Selecciona múltiples partidos para ver medias e identificar tendencias."
+
+msgid "<strong>Filtra per fase:</strong> Analitza el rendiment en lliga regular vs playoffs per separat."
+msgstr "<strong>Filtra por fase:</strong> Analiza el rendimiento en liga regular vs playoffs por separado."
+
+msgid "<strong>Revisa les rotacions:</strong> Identifica quines rotacions necessiten més treball a l'entrenament."
+msgstr "<strong>Revisa las rotaciones:</strong> Identifica qué rotaciones necesitan más trabajo en el entrenamiento."
+
+msgid "<strong>Segueix l'evolució:</strong> Compara les estadístiques al llarg de la temporada per veure el progrés."
+msgstr "<strong>Sigue la evolución:</strong> Compara las estadísticas a lo largo de la temporada para ver el progreso."
+
+msgid "<strong>Utilitza el valor del jugador:</strong> La mètrica de valor (punts - errors) és útil per avaluar l'impacte real d'un jugador."
+msgstr "<strong>Utiliza el valor del jugador:</strong> La métrica de valor (puntos - errores) es útil para evaluar el impacto real de un jugador."
+
+msgid "Preparat per començar?"
+msgstr "¿Preparado para empezar?"
+
+msgid "Accedeix a totes les funcionalitats avançades iniciant sessió."
+msgstr "Accede a todas las funcionalidades avanzadas iniciando sesión."
