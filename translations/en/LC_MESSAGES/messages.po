@@ -25,6 +25,30 @@ msgstr "Updated in real time"
 msgid "Estadístiques de voleibol en temps real - Voleibol Girona"
 msgstr "Real-time volleyball statistics - Voleibol Girona"
 
+msgid "Filtrar per equip"
+msgstr "Filter by team"
+
+msgid "Tots els equips"
+msgstr "All teams"
+
+msgid "Tots"
+msgstr "All"
+
+msgid "Últims Partits"
+msgstr "Latest Matches"
+
+msgid "Resum per Equip"
+msgstr "Summary by Team"
+
+msgid "Vols analitzar els partits en detall?"
+msgstr "Want to analyze matches in detail?"
+
+msgid "Inicia sessió per veure estadístiques completes de cada partit: accions, jugadors, distribució i molt més!"
+msgstr "Log in to see complete statistics for each match: actions, players, distribution and much more!"
+
+msgid "No s'han trobat resultats amb els filtres seleccionats."
+msgstr "No results found with the selected filters."
+
 # Navigation
 msgid "Inici"
 msgstr "Home"
