@@ -1,9 +1,9 @@
-    <!DOCTYPE html>
-<html lang="ca">
+<!DOCTYPE html>
+<html lang="{{ current_lang }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Estadístiques de voleibol en temps real - Voleibol Girona">
+    <meta name="description" content="{{ _('Estadístiques de voleibol en temps real - Voleibol Girona') }}">
     <title>{% block title %}Voleibol Stats{% endblock %}</title>
     
     <!-- Google AdSense -->
@@ -121,6 +121,33 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+        
+        /* Language selector */
+        .language-selector {
+            display: flex;
+            gap: 0.5rem;
+            margin-right: 1rem;
+        }
+        
+        .lang-btn {
+            font-size: 1.25rem;
+            text-decoration: none;
+            opacity: 0.6;
+            transition: all 0.3s;
+            padding: 0.25rem;
+            cursor: pointer;
+        }
+        
+        .lang-btn:hover,
+        .lang-btn.active {
+            opacity: 1;
+            transform: scale(1.15);
+        }
+        
+        .nav-container {
+            display: flex;
+            align-items: center;
         }
         
         nav {
@@ -640,7 +667,7 @@
                 display: block;
             }
             
-            nav {
+            .nav-container {
                 display: none;
                 position: absolute;
                 top: 100%;
@@ -651,8 +678,25 @@
                 flex-direction: column;
             }
             
-            nav.active {
+            .nav-container.active {
                 display: flex;
+            }
+            
+            .nav-container nav {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .nav-container nav a {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .language-selector {
+                justify-content: center;
+                margin: 1rem 0;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
             }
             
             .hero h1 {
@@ -687,8 +731,8 @@
     <header>
         <div class="header-top">
             <div class="container">
-                <span><i class="fas fa-volleyball-ball"></i> VoleibolStats - Estadístiques Oficials</span>
-                <span><i class="fas fa-clock"></i> Actualitzat en temps real</span>
+                <span><i class="fas fa-volleyball-ball"></i> {{ _('VoleibolStats - Estadístiques Oficials') }}</span>
+                <span><i class="fas fa-clock"></i> {{ _('Actualitzat en temps real') }}</span>
             </div>
         </div>
         <div class="header-main">
@@ -703,23 +747,36 @@
                         <i class="fas fa-bars"></i>
                     </button>
                     
-                    <nav id="main-nav">
-                        <a href="{{ url_for('index') }}" class="{% if request.endpoint == 'index' %}active{% endif %}">
-                            <i class="fas fa-home"></i> Inici
-                        </a>
-                        <a href="{{ url_for('resultados') }}" class="{% if request.endpoint == 'resultados' %}active{% endif %}">
-                            <i class="fas fa-list"></i> Resultats
-                        </a>
-                        <a href="{{ url_for('quisom') }}" class="{% if request.endpoint == 'quisom' %}active{% endif %}">
-                            <i class="fas fa-info-circle"></i> Qui Som
-                        </a>
-                        <a href="{{ url_for('contacte') }}" class="{% if request.endpoint == 'contacte' %}active{% endif %}">
-                            <i class="fas fa-envelope"></i> Contacte
-                        </a>
-                        <a href="{{ url_for('login') }}" class="btn btn-primary">
-                            <i class="fas fa-sign-in-alt"></i> Accedir
-                        </a>
-                    </nav>
+                    <div class="nav-container" id="nav-container">
+                        <!-- Selector de idioma -->
+                        <div class="language-selector">
+                            {% for lang in languages %}
+                                <a href="{{ url_for('set_language', lang=lang.code) }}" 
+                                   class="lang-btn {% if current_lang == lang.code %}active{% endif %}"
+                                   title="{{ lang.name }}">
+                                    {{ lang.flag }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                        
+                        <nav id="main-nav">
+                            <a href="{{ url_for('index') }}" class="{% if request.endpoint == 'index' %}active{% endif %}">
+                                <i class="fas fa-home"></i> {{ _('Inici') }}
+                            </a>
+                            <a href="{{ url_for('resultados') }}" class="{% if request.endpoint == 'resultados' %}active{% endif %}">
+                                <i class="fas fa-list"></i> {{ _('Resultats') }}
+                            </a>
+                            <a href="{{ url_for('quisom') }}" class="{% if request.endpoint == 'quisom' %}active{% endif %}">
+                                <i class="fas fa-info-circle"></i> {{ _('Qui Som') }}
+                            </a>
+                            <a href="{{ url_for('contacte') }}" class="{% if request.endpoint == 'contacte' %}active{% endif %}">
+                                <i class="fas fa-envelope"></i> {{ _('Contacte') }}
+                            </a>
+                            <a href="{{ url_for('login') }}" class="btn btn-primary">
+                                <i class="fas fa-sign-in-alt"></i> {{ _('Accedir') }}
+                            </a>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
@@ -739,7 +796,7 @@
                 <div class="footer-section">
                     <h4><i class="fas fa-volleyball-ball"></i> VoleibolStats</h4>
                     <p style="color: var(--gray-400); font-size: 0.9rem;">
-                        Plataforma d'estadístiques avançades per a equips de voleibol.
+                        {{ _("Plataforma d'estadístiques avançades per a equips de voleibol.") }}
                     </p>
                     <div class="social-links">
                         <a href="https://instagram.com/gerardbalastegui" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -747,30 +804,30 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Navegació</h4>
-                    <a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Inici</a>
-                    <a href="{{ url_for('resultados') }}"><i class="fas fa-list"></i> Resultats</a>
-                    <a href="{{ url_for('quisom') }}"><i class="fas fa-info-circle"></i> Qui Som</a>
-                    <a href="{{ url_for('com_funciona') }}"><i class="fas fa-book-open"></i> Com Funciona</a>
-                    <a href="{{ url_for('contacte') }}"><i class="fas fa-envelope"></i> Contacte</a>
+                    <h4>{{ _('Navegació') }}</h4>
+                    <a href="{{ url_for('index') }}"><i class="fas fa-home"></i> {{ _('Inici') }}</a>
+                    <a href="{{ url_for('resultados') }}"><i class="fas fa-list"></i> {{ _('Resultats') }}</a>
+                    <a href="{{ url_for('quisom') }}"><i class="fas fa-info-circle"></i> {{ _('Qui Som') }}</a>
+                    <a href="{{ url_for('com_funciona') }}"><i class="fas fa-book-open"></i> {{ _('Com Funciona') }}</a>
+                    <a href="{{ url_for('contacte') }}"><i class="fas fa-envelope"></i> {{ _('Contacte') }}</a>
                 </div>
                 <div class="footer-section">
-                    <h4>Legal</h4>
-                    <a href="{{ url_for('avis_legal') }}"><i class="fas fa-gavel"></i> Avís Legal</a>
-                    <a href="{{ url_for('privacitat') }}"><i class="fas fa-shield-alt"></i> Privacitat</a>
-                    <a href="{{ url_for('cookies') }}"><i class="fas fa-cookie-bite"></i> Cookies</a>
+                    <h4>{{ _('Legal') }}</h4>
+                    <a href="{{ url_for('avis_legal') }}"><i class="fas fa-gavel"></i> {{ _('Avís Legal') }}</a>
+                    <a href="{{ url_for('privacitat') }}"><i class="fas fa-shield-alt"></i> {{ _('Privacitat') }}</a>
+                    <a href="{{ url_for('cookies') }}"><i class="fas fa-cookie-bite"></i> {{ _('Cookies') }}</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Desenvolupat amb ❤️ per <a href="https://instagram.com/gerardbalastegui" target="_blank">Gerard Balastegui Mera</a></p>
-                <p style="margin-top: 0.5rem;">© 2024 VoleibolStats. Tots els drets reservats.</p>
+                <p>{{ _('Desenvolupat amb ❤️ per') }} <a href="https://instagram.com/gerardbalastegui" target="_blank">Gerard Balastegui Mera</a></p>
+                <p style="margin-top: 0.5rem;">© 2024 VoleibolStats. {{ _('Tots els drets reservats.') }}</p>
             </div>
         </div>
     </footer>
     
     <script>
         function toggleMenu() {
-            document.getElementById('main-nav').classList.toggle('active');
+            document.getElementById('nav-container').classList.toggle('active');
         }
     </script>
     
