@@ -25,6 +25,81 @@ msgstr "Actualizado en tiempo real"
 msgid "Estadístiques de voleibol en temps real - Voleibol Girona"
 msgstr "Estadísticas de voleibol en tiempo real - Voleibol Girona"
 
+msgid "Coneix el projecte Voleibol Stats"
+msgstr "Conoce el proyecto Voleibol Stats"
+
+msgid "El Projecte"
+msgstr "El Proyecto"
+
+msgid "<strong>Voleibol Stats</strong> és una plataforma d'estadístiques avançades per a equips de voleibol, desenvolupada amb l'objectiu de proporcionar eines d'anàlisi professional a clubs i entrenadors."
+msgstr "<strong>Voleibol Stats</strong> es una plataforma de estadísticas avanzadas para equipos de voleibol, desarrollada con el objetivo de proporcionar herramientas de análisis profesional a clubes y entrenadores."
+
+msgid "El projecte va néixer de la passió pel voleibol i la necessitat de tenir dades detallades sobre el rendiment dels equips i jugadors. Actualment donem servei als equips de <strong>Voleibol Girona</strong>, oferint estadístiques en temps real de tots els seus partits."
+msgstr "El proyecto nació de la pasión por el voleibol y la necesidad de tener datos detallados sobre el rendimiento de los equipos y jugadores. Actualmente damos servicio a los equipos de <strong>Voleibol Girona</strong>, ofreciendo estadísticas en tiempo real de todos sus partidos."
+
+msgid "La nostra missió és democratitzar l'accés a les estadístiques esportives, permetent que equips de totes les categories puguin analitzar el seu rendiment amb les mateixes eines que utilitzen els equips professionals."
+msgstr "Nuestra misión es democratizar el acceso a las estadísticas deportivas, permitiendo que equipos de todas las categorías puedan analizar su rendimiento con las mismas herramientas que utilizan los equipos profesionales."
+
+msgid "Què Oferim"
+msgstr "Qué Ofrecemos"
+
+msgid "Estadístiques Completes"
+msgstr "Estadísticas Completas"
+
+msgid "Registrem totes les accions del joc: atacs, recepcions, saques, bloquejos i defenses, amb indicadors de qualitat per a cada acció."
+msgstr "Registramos todas las acciones del juego: ataques, recepciones, saques, bloqueos y defensas, con indicadores de calidad para cada acción."
+
+msgid "Anàlisi Individual"
+msgstr "Análisis Individual"
+
+msgid "Cada jugador té el seu perfil amb estadístiques detallades, evolució temporal i comparatives amb la resta de l'equip."
+msgstr "Cada jugador tiene su perfil con estadísticas detalladas, evolución temporal y comparativas con el resto del equipo."
+
+msgid "Anàlisi per Rotació"
+msgstr "Análisis por Rotación"
+
+msgid "Visualitza el rendiment de l'equip en cada rotació, amb distribució del col·locador i eficàcia d'atac per zona."
+msgstr "Visualiza el rendimiento del equipo en cada rotación, con distribución del colocador y eficacia de ataque por zona."
+
+msgid "Rànquings i Assoliments"
+msgstr "Rankings y Logros"
+
+msgid "Sistema de badges i assoliments per motivar els jugadors, amb rànquings actualitzats en temps real."
+msgstr "Sistema de badges y logros para motivar a los jugadores, con rankings actualizados en tiempo real."
+
+msgid "Tecnologia"
+msgstr "Tecnología"
+
+msgid "Voleibol Stats està construït amb tecnologies modernes per garantir velocitat, fiabilitat i escalabilitat:"
+msgstr "Voleibol Stats está construido con tecnologías modernas para garantizar velocidad, fiabilidad y escalabilidad:"
+
+msgid "Base de dades"
+msgstr "Base de datos"
+
+msgid "Visualitzacions"
+msgstr "Visualizaciones"
+
+msgid "per a gràfics interactius"
+msgstr "para gráficos interactivos"
+
+msgid "El Desenvolupador"
+msgstr "El Desarrollador"
+
+msgid "Voleibol Stats ha estat creat per <strong>Gerard Balastegui Mera</strong>, jugador i entusiasta del voleibol amb experiència en desenvolupament de programari i anàlisi de dades."
+msgstr "Voleibol Stats ha sido creado por <strong>Gerard Balastegui Mera</strong>, jugador y entusiasta del voleibol con experiencia en desarrollo de software y análisis de datos."
+
+msgid "El projecte va començar com una eina personal per analitzar els partits del seu equip i ha evolucionat fins a convertir-se en una plataforma completa d'estadístiques."
+msgstr "El proyecto comenzó como una herramienta personal para analizar los partidos de su equipo y ha evolucionado hasta convertirse en una plataforma completa de estadísticas."
+
+msgid "Tens preguntes?"
+msgstr "¿Tienes preguntas?"
+
+msgid "Si vols més informació sobre el projecte o estàs interessat en utilitzar Voleibol Stats per al teu equip, no dubtis en contactar-nos."
+msgstr "Si quieres más información sobre el proyecto o estás interesado en utilizar Voleibol Stats para tu equipo, no dudes en contactarnos."
+
+msgid "Contactar"
+msgstr "Contactar"
+
 msgid "Filtrar per equip"
 msgstr "Filtrar por equipo"
 
