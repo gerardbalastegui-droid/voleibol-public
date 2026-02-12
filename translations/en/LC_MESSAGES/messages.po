@@ -70,6 +70,12 @@ msgid "Tots els drets reservats."
 msgstr "All rights reserved."
 
 # Index page
+msgid "Canviar equip"
+msgstr "Change team"
+
+msgid "Últims 5 partits"
+msgstr "Last 5 matches"
+
 msgid "Sistema d'Estadístiques de Voleibol"
 msgstr "Volleyball Statistics System"
 
