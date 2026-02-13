@@ -715,7 +715,7 @@ msgstr "<strong>Review rotations:</strong> Identify which rotations need more wo
 msgid "<strong>Segueix l'evolució:</strong> Compara les estadístiques al llarg de la temporada per veure el progrés."
 msgstr "<strong>Follow the evolution:</strong> Compare statistics throughout the season to see progress."
 
-msgid "<strong>Utilitza el valor del jugador:</strong> La mètrica de valor (punts - errors) és útil per avaluar l'impacto real d'un jugador."
+msgid "<strong>Utilitza el valor del jugador:</strong> La mètrica de valor (punts - errors) és útil per avaluar l'impacte real d'un jugador."
 msgstr "<strong>Use player value:</strong> The value metric (points - errors) is useful for evaluating a player's real impact."
 
 msgid "Preparat per començar?"
