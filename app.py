@@ -134,8 +134,16 @@ def get_equipo_stats(equipo_id):
         stats = pd.read_sql(text("""
             SELECT 
                 COUNT(*) as partidos,
-                COUNT(*) FILTER (WHERE resultado LIKE '3-%' OR resultado LIKE '3 -%') as victorias,
-                COUNT(*) FILTER (WHERE resultado NOT LIKE '3-%' AND resultado NOT LIKE '3 -%' AND resultado IS NOT NULL) as derrotas
+                COUNT(*) FILTER (WHERE 
+                    (local = true AND SPLIT_PART(resultado, '-', 1)::int > SPLIT_PART(resultado, '-', 2)::int)
+                    OR 
+                    (local = false AND SPLIT_PART(resultado, '-', 2)::int > SPLIT_PART(resultado, '-', 1)::int)
+                ) as victorias,
+                COUNT(*) FILTER (WHERE 
+                    (local = true AND SPLIT_PART(resultado, '-', 1)::int < SPLIT_PART(resultado, '-', 2)::int)
+                    OR 
+                    (local = false AND SPLIT_PART(resultado, '-', 2)::int < SPLIT_PART(resultado, '-', 1)::int)
+                ) as derrotas
             FROM partidos_new
             WHERE equipo_id = :equipo_id
         """), conn, params={"equipo_id": equipo_id})
@@ -222,7 +230,9 @@ def get_partidos_equipo(equipo_id, limit=None):
                 resultado,
                 TO_CHAR(fecha, 'DD/MM/YYYY') as fecha,
                 CASE 
-                    WHEN resultado LIKE '3-%' OR resultado LIKE '3 -%' THEN 'victoria'
+                    WHEN (local = true AND SPLIT_PART(resultado, '-', 1)::int > SPLIT_PART(resultado, '-', 2)::int)
+                         OR (local = false AND SPLIT_PART(resultado, '-', 2)::int > SPLIT_PART(resultado, '-', 1)::int)
+                    THEN 'victoria'
                     ELSE 'derrota'
                 END as resultado_tipo
             FROM partidos_new
@@ -252,7 +262,9 @@ def get_todos_resultados():
                 p.local,
                 TO_CHAR(p.fecha, 'DD/MM/YYYY') as fecha,
                 CASE 
-                    WHEN p.resultado LIKE '3-%' OR p.resultado LIKE '3 -%' THEN 'victoria'
+                    WHEN (local = true AND SPLIT_PART(resultado, '-', 1)::int > SPLIT_PART(resultado, '-', 2)::int)
+                        OR (local = false AND SPLIT_PART(resultado, '-', 2)::int > SPLIT_PART(resultado, '-', 1)::int)
+                    THEN 'victoria'
                     ELSE 'derrota'
                 END as resultado_tipo
             FROM partidos_new p
