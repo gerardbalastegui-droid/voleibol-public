@@ -228,7 +228,8 @@ def get_partidos_equipo(equipo_id, limit=10):
                 rival,
                 local,
                 resultado,
-                TO_CHAR(fecha, 'DD/MM/YYYY') as fecha,
+                TO_CHAR(fecha, 'DD/MM/YYYY') as fecha_display,
+                fecha as fecha_orden,
                 CASE 
                     WHEN (local = true AND SPLIT_PART(resultado, '-', 1)::int > SPLIT_PART(resultado, '-', 2)::int)
                          OR (local = false AND SPLIT_PART(resultado, '-', 2)::int > SPLIT_PART(resultado, '-', 1)::int)
@@ -237,9 +238,14 @@ def get_partidos_equipo(equipo_id, limit=10):
                 END as resultado_tipo
             FROM partidos_new
             WHERE equipo_id = :equipo_id
-            ORDER BY fecha DESC, id DESC
+            ORDER BY fecha_orden DESC, id DESC
             {limit_clause}
         """), conn, params={"equipo_id": equipo_id})
+        
+        # Renombrar para mantener compatibilidad con el template
+        df = df.rename(columns={'fecha_display': 'fecha'})
+        df = df.drop(columns=['fecha_orden'])
+        
         return df.to_dict('records')
 
 def get_todos_resultados():
