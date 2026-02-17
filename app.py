@@ -155,23 +155,34 @@ def get_equipo_stats(equipo_id):
         
         # Calcular racha actual (últimos 5 partidos)
         ultimos = pd.read_sql(text("""
-            SELECT resultado
+            SELECT resultado, local
             FROM partidos_new
             WHERE equipo_id = :equipo_id AND resultado IS NOT NULL
-            ORDER BY fecha DESC
+            ORDER BY fecha DESC, id DESC
             LIMIT 5
         """), conn, params={"equipo_id": equipo_id})
         
         if not ultimos.empty:
             racha = []
-            for r in ultimos['resultado']:
-                if r and (r.startswith('3-') or r.startswith('3 -')):
-                    racha.append('W')
-                else:
-                    racha.append('L')
-            result['racha'] = ''.join(racha)
+            for _, row in ultimos.iterrows():
+                try:
+                    partes = row['resultado'].split('-')
+                    sets_local = int(partes[0])
+                    sets_visitante = int(partes[1])
+                    
+                    if row['local']:
+                        # Si somos locales, ganamos si el primer número es mayor
+                        victoria = sets_local > sets_visitante
+                    else:
+                        # Si somos visitantes, ganamos si el segundo número es mayor
+                        victoria = sets_visitante > sets_local
+                    
+                    racha.append('W' if victoria else 'L')
+                except:
+                    racha.append('?')
+            result['racha'] = racha
         else:
-            result['racha'] = ''
+            result['racha'] = []
         
         return result
 
