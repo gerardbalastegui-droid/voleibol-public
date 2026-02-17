@@ -213,8 +213,8 @@ def get_top_anotadores(equipo_id, limit=5):
         """), conn, params={"equipo_id": equipo_id, "limit": limit})
         return df.to_dict('records')
 
-def get_partidos_equipo(equipo_id, limit=None):
-    """Obtiene partidos de un equipo"""
+def get_partidos_equipo(equipo_id, limit=10):
+    """Obtiene partidos de un equipo (últimos 10 por defecto)"""
     engine = get_engine()
     if not engine:
         return []
@@ -237,7 +237,7 @@ def get_partidos_equipo(equipo_id, limit=None):
                 END as resultado_tipo
             FROM partidos_new
             WHERE equipo_id = :equipo_id
-            ORDER BY fecha DESC
+            ORDER BY fecha DESC, id DESC
             {limit_clause}
         """), conn, params={"equipo_id": equipo_id})
         return df.to_dict('records')
